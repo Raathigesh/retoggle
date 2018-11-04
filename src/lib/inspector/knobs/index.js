@@ -5,6 +5,7 @@ import Text from "./renderers/text";
 import Number from "./renderers/number";
 import Range from "./renderers/range";
 import Select from "./renderers/select";
+import TimeMachine from "./renderers/timemachine";
 
 const Container = styled.div``;
 
@@ -22,6 +23,8 @@ function getRenderer(label, props) {
       return <Range {...props} />;
     case "select":
       return <Select {...props} />;
+    case "timemachine":
+      return <TimeMachine {...props} />;
     default:
       return null;
   }

@@ -6,3 +6,4 @@ export { default as useNumberKnob } from "./knobs/useNumberKnob";
 export { default as useRangeKnob } from "./knobs/useRangeKnob";
 export { default as useRangesKnob } from "./knobs/useRangesKnob";
 export { default as useSelectKnob } from "./knobs/useSelectKnob";
+export { default as useTimemachine } from "./knobs/useTimemachine";

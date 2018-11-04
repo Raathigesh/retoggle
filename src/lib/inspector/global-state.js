@@ -27,3 +27,14 @@ export function setKnob(knob) {
     [knob.name]: knob
   };
 }
+
+export function setCSS(css) {
+  if (window.setCSS) {
+    window.setCSS(css);
+  }
+
+  window.cssEditors = {
+    ...window.cssEditors,
+    [css.name]: css
+  };
+}

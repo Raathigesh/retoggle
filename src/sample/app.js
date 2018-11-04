@@ -7,7 +7,8 @@ import {
   useNumberKnob,
   useRangeKnob,
   useRangesKnob,
-  useSelectKnob
+  useSelectKnob,
+  useTimemachine
 } from "../lib";
 
 export default function App() {
@@ -27,10 +28,11 @@ export default function App() {
     yAxis: { initialValue: 9 }
   });
   const [selectKnobValue] = useSelectKnob("Select", ["one", "two"], "two");
+  const timeControlled = useTimemachine("timemachine", value);
   return (
     <React.Fragment>
       <Inspector />
-      <div className="App">{value}</div>
+      <div className="App">{timeControlled}</div>
       <input type="text" onChange={e => setValue(e.target.value)} />
       {booleanKnobValue && <div>Knob is ON</div>}
       {textKnobValue}
