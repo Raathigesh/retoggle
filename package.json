@@ -1,13 +1,12 @@
 {
   "name": "storyhooks",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "dependencies": {
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
     "react-inspector": "^2.3.0",
-    "react-scripts": "1.1.4",
     "styled-components": "^4.0.3"
   },
   "scripts": {
@@ -18,7 +17,6 @@
     "roll": "rollup -c"
   },
   "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
@@ -27,6 +25,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "react-scripts": "1.1.4",
     "babel-core": "^6.26.3",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",

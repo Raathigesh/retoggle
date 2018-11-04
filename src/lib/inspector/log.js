@@ -3,19 +3,29 @@ import styled from "styled-components";
 import Inspector from "react-inspector";
 
 const Container = styled.div`
-  font-size: 14px;
+  font-size: 12px;
   display: flex;
+  padding-bottom: 4px;
 `;
+
 const Name = styled.div`
-  font-weight: 700;
   padding-right: 10px;
-  background-color: wheat;
+  color: #2196f3;
 `;
+
 const Value = styled.div``;
 
-export default function LogItem({ name, value }) {
-  const renderer =
-    typeof value === "object" ? <Inspector data={value} /> : value;
+function getRenderer(value) {
+  if (typeof value === "object") {
+    return <Inspector data={value} />;
+  } else if (typeof value === "boolean") {
+    return value.toString();
+  }
+  return value;
+}
+
+export default function Log({ name, value }) {
+  const renderer = getRenderer(value);
 
   return (
     <Container>
