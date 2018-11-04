@@ -6666,7 +6666,7 @@ react-dev-utils@^5.0.1:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.7.0-alpha.0:
+react-dom@16.7.0-alpha.0:
   version "16.7.0-alpha.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0-alpha.0.tgz#8379158d4c76d63c989f325f45dfa5762582584f"
   integrity sha512-/XUn1ldxmoV2B7ov0rWT5LMZaaHMlF9GGLkUsmPRxmWTJwRDOuAPXidSaSlmR/VOhDSI1s+v3+KzFqhhDFJxYA==
@@ -6680,6 +6680,11 @@ react-error-overlay@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.1.tgz#417addb0814a90f3a7082eacba7cee588d00da89"
   integrity sha512-xXUbDAZkU08aAkjtUvldqbvI04ogv+a1XdHxvYuHPYKIVk/42BIOD0zSKTHAWV4+gDy3yGm283z2072rA2gdtw==
+
+react-feather@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-1.1.4.tgz#d0143da95f9d52843cf13a553091573a7c617897"
+  integrity sha512-Odke3WUl00+a2scGQKlep4m+qDESl/x+PsTRB3v6fAV/2dteF4EaRjqhX8h7HM3mU3V3v0xGTv8Z5S26bpQ5PQ==
 
 react-inspector@^2.3.0:
   version "2.3.0"

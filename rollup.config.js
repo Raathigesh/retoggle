@@ -19,15 +19,14 @@ export default {
       sourcemap: true
     }
   ],
+  external: ["react", "react-dom", "prop-types"],
   plugins: [
-    external(),
     babel({
       exclude: "node_modules/**",
       plugins: ["external-helpers"]
     }),
     resolve(),
     commonjs({
-      include: "node_modules/**",
       namedExports: {
         "node_modules/react-is/index.js": [
           "isValidElementType",
