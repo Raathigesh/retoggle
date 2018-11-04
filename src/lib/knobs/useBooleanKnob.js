@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { setKnob } from "../inspector/global-state";
+import { setKnob, removeKnob } from "../inspector/global-state";
 
 export default function useBooleanKnob(name, initialValue = false) {
   const [value, setValue] = useState(initialValue);
@@ -16,5 +16,9 @@ export default function useBooleanKnob(name, initialValue = false) {
     },
     [value]
   );
+
+  useEffect(() => {
+    return () => removeKnob(name);
+  }, []);
   return [value, setValue];
 }

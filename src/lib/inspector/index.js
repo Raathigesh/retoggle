@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
+import { ChevronUp, ChevronDown } from "react-feather";
 import Knobs from "./knobs";
 import Logs from "./logs";
 import { mount } from "./mount";
@@ -19,7 +20,7 @@ const Container = styled.div`
 
 const CollapseHandle = styled.div`
   display: flex;
-  height: 8px;
+  justify-content: center;
   background-color: #dfdfdf;
   cursor: pointer;
 `;
@@ -51,7 +52,9 @@ export default function Inspector() {
             <Knobs />
           </Content>
         )}
-        <CollapseHandle title="Collapse" onClick={handleExpandToggle} />
+        <CollapseHandle title="Collapse" onClick={handleExpandToggle}>
+          {isCollapsed ? <ChevronDown size={12} /> : <ChevronUp size={12} />}
+        </CollapseHandle>
       </Container>
     </React.Fragment>,
     mount()

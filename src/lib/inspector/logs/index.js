@@ -17,7 +17,7 @@ export default function Logs() {
   const [logs, setLogs] = useState({});
   useEffect(() => {
     if (window.logs) {
-      setLogs(previousLogs => ({ ...window.logs }));
+      setLogs({ ...window.logs });
     }
 
     window.setLog = log => {

@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { setKnob } from "../inspector/global-state";
+import { setKnob, removeKnob } from "../inspector/global-state";
 
 export default function useSelectKnob(name, options, initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -17,5 +17,10 @@ export default function useSelectKnob(name, options, initialValue) {
     },
     [value]
   );
+
+  useEffect(() => {
+    return () => removeKnob(name);
+  }, []);
+
   return [value, setValue];
 }

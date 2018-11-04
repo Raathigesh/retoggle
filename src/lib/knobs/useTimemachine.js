@@ -1,7 +1,7 @@
 // https://twitter.com/dan_abramov/status/1058870951373344769
 
-import { useState, useContext, useEffect, useReducer } from "react";
-import { setKnob } from "../inspector/global-state";
+import { useEffect, useReducer } from "react";
+import { setKnob, removeKnob } from "../inspector/global-state";
 
 export default function useTimeMachine(name, currentState) {
   const [machineState, dispatch] = useReducer(
@@ -51,6 +51,10 @@ export default function useTimeMachine(name, currentState) {
     },
     [version, history]
   );
+
+  useEffect(() => {
+    return () => removeKnob(name);
+  }, []);
 
   return history[version];
 }

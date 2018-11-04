@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { setLog } from "../inspector/global-state";
+import React, { useEffect } from "react";
+import { setLog, removeLog } from "../inspector/global-state";
 
 export default function useLog(name, value) {
   useEffect(
@@ -14,4 +14,10 @@ export default function useLog(name, value) {
     },
     [value]
   );
+
+  useEffect(() => {
+    return () => {
+      removeLog(name);
+    };
+  }, []);
 }

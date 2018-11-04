@@ -46,7 +46,7 @@ export default function Knobs() {
 
   useEffect(() => {
     if (window.knobs) {
-      setKnobs(previousKnobs => ({ ...window.knobs }));
+      setKnobs({ ...window.knobs });
     }
 
     window.setKnob = knob => {

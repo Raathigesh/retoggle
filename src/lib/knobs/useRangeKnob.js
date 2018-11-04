@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { setKnob } from "../inspector/global-state";
+import { setKnob, removeKnob } from "../inspector/global-state";
 
 export default function useRangeKnob(
   name,
@@ -21,5 +21,10 @@ export default function useRangeKnob(
     },
     [value]
   );
+
+  useEffect(() => {
+    return () => removeKnob(name);
+  }, []);
+
   return [value, setValue];
 }
