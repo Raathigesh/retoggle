@@ -5,7 +5,9 @@ import {
   useBooleanKnob,
   useTextKnob,
   useNumberKnob,
-  useRangeKnob
+  useRangeKnob,
+  useRangesKnob,
+  useSelectKnob
 } from "../lib";
 
 export default function App() {
@@ -20,6 +22,11 @@ export default function App() {
   const [rangeKnobValue] = useRangeKnob("Range", {
     initialValue: 50
   });
+  const [rangesKnobValue] = useRangesKnob("Range", {
+    xAxis: { initialValue: 5 },
+    yAxis: { initialValue: 9 }
+  });
+  const [selectKnobValue] = useSelectKnob("Select", ["one", "two"], "two");
   return (
     <React.Fragment>
       <Inspector />
@@ -28,6 +35,8 @@ export default function App() {
       {booleanKnobValue && <div>Knob is ON</div>}
       {textKnobValue}
       {rangeKnobValue}
+      {selectKnobValue}
+      {JSON.stringify(rangesKnobValue)}
     </React.Fragment>
   );
 }

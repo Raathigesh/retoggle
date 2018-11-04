@@ -4,6 +4,7 @@ import Toggle from "./renderers/boolean";
 import Text from "./renderers/text";
 import Number from "./renderers/number";
 import Range from "./renderers/range";
+import Select from "./renderers/select";
 
 const Container = styled.div``;
 
@@ -19,6 +20,8 @@ function getRenderer(label, props) {
       return <Number {...props} />;
     case "range":
       return <Range {...props} />;
+    case "select":
+      return <Select {...props} />;
     default:
       return null;
   }

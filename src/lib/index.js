@@ -4,3 +4,5 @@ export { default as useBooleanKnob } from "./knobs/useBooleanKnob";
 export { default as useTextKnob } from "./knobs/useTextKnob";
 export { default as useNumberKnob } from "./knobs/useNumberKnob";
 export { default as useRangeKnob } from "./knobs/useRangeKnob";
+export { default as useRangesKnob } from "./knobs/useRangesKnob";
+export { default as useSelectKnob } from "./knobs/useSelectKnob";
