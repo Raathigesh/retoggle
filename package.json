@@ -1,8 +1,7 @@
 {
   "name": "storyhooks",
   "version": "0.6.0",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "lib/index.js",
   "dependencies": {
     "react-feather": "^1.1.4",
     "react-inspector": "^2.3.0",
@@ -10,11 +9,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env.development --config ./config/webpack.dev.config.js",
+    "test": "jest",
     "build-docs": "cross-env BABEL_ENV='production' rimraf dist && webpack --env.production --config ./config/webpack.dev.config.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "build": "cross-env BABEL_ENV='production' rimraf lib && webpack --env.production --config ./config/webpack.lib.config.js",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist && rimraf ./lib"
   },
   "eslintConfig": {},
   "browserslist": [
@@ -43,6 +41,7 @@
     "cross-env": "^5.2.0",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
+    "jest": "^23.6.0",
     "react": "^16.7.0-alpha.0",
     "react-dom": "16.7.0-alpha.0",
     "rimraf": "^2.6.2",

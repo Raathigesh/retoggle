@@ -7,17 +7,23 @@ module.exports = env => ({
   mode: "production",
   output: {
     path: path.resolve(__dirname, "../lib"),
-    filename: "lib.js",
+    filename: "index.js",
+    sourceMapFilename: "[file].map",
     library: "storyhooks",
     libraryTarget: "umd"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
-  optimization: {
-    minimizer: [new UglifyJsPlugin()]
-  },
   devtool: "source-map",
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        sourceMap: true
+      })
+    ]
+  },
+
   module: {
     rules: [
       {
