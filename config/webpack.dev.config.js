@@ -4,7 +4,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const path = require("path");
 
 module.exports = env => ({
-  entry: "./src/index.js",
+  entry: "./src/example/index.js",
   mode: env.production ? "production" : "development",
   output: {
     path: path.resolve(__dirname, "../dist"),

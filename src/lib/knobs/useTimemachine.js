@@ -34,7 +34,6 @@ export default function useTimeMachine(name, currentState) {
 
   useEffect(
     () => {
-      console.log(history.length);
       setKnob({
         name,
         type: "timemachine",
