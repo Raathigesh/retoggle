@@ -18,6 +18,9 @@ module.exports = env => ({
     hot: true,
     port: 9000
   },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
+  },
   devtool: "source-map",
   module: {
     rules: [
