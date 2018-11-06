@@ -7,7 +7,7 @@ import {
 import Component from "./boolean";
 addKnobRenderer("boolean", Component);
 
-export default function useBooleanKnob(name, initialValue = false) {
+export default function useBooleanKnob(name: string, initialValue = false) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
@@ -15,7 +15,7 @@ export default function useBooleanKnob(name, initialValue = false) {
         name,
         type: "boolean",
         value,
-        onChange: value => {
+        onChange: (value: boolean) => {
           setValue(value);
         }
       });

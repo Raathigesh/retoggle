@@ -28,8 +28,8 @@ export default function Knobs() {
       setKnobs({ ...getKnobs() });
     }
 
-    addKnobSubscriber(knob => {
-      setKnobs(previousKnobs => ({
+    addKnobSubscriber((knob: any) => {
+      setKnobs((previousKnobs: any) => ({
         ...previousKnobs,
         ...{ [knob.name]: knob }
       }));
@@ -42,7 +42,7 @@ export default function Knobs() {
         <Sliders size={12} />
         <span>Knobs</span>
       </Title>
-      {Object.entries(knobs).map(([name, knob]) => {
+      {Object.entries(knobs).map(([name, knob]: any) => {
         const Component = getKnobRenderer(knob.type);
         return <Component {...knob} />;
       })}

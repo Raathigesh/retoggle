@@ -21,8 +21,8 @@ export default function Logs() {
       setLogs({ ...getLogs() });
     }
 
-    addLogSubscriber(log => {
-      setLogs(previousLogs => ({
+    addLogSubscriber((log: any) => {
+      setLogs((previousLogs: any) => ({
         ...previousLogs,
         ...{ [log.name]: log }
       }));
@@ -35,7 +35,7 @@ export default function Logs() {
         <Activity size={12} />
         <span>Logs</span>
       </Title>
-      {Object.values(logs).map(log => (
+      {Object.values(logs).map((log: any) => (
         <Log {...log.props} />
       ))}
     </Container>

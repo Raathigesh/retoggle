@@ -6,6 +6,7 @@ export default function ToggleComponent({ name, value, onChange }) {
     <KnobFrame label={name}>
       <input
         type="checkbox"
+        data-testid={name}
         defaultChecked={value}
         onChange={e => {
           onChange(e.target.checked);

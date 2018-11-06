@@ -33,7 +33,7 @@ export default function Inspector({ usePortal = true }) {
   const [isCollapsed, setCollapsed] = useState(false);
 
   const handleExpandToggle = () => {
-    localStorage.setItem("storyhooksIsCollapsed", !isCollapsed);
+    localStorage.setItem("storyhooksIsCollapsed", (!isCollapsed).toString());
     setCollapsed(!isCollapsed);
   };
 
