@@ -1,5 +1,8 @@
 # storyhooks
 
+[![Build Status][build-badge]][build]
+[![MIT License][license-badge]][license]
+
 ## useLog(label, value)
 
 Displays the value in the inspector panel
@@ -102,3 +105,6 @@ function Demo() {
   return <div>{range}</div>;
 }
 ```
+
+[build-badge]: https://img.shields.io/travis/raathigesh/storyhooks.svg?style=flat-square
+[build]: https://travis-ci.org/Raathigesh/storyhooks
