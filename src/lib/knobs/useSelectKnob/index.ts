@@ -1,13 +1,21 @@
 import { useState, useContext, useEffect } from "react";
-import { setKnob, removeKnob } from "../inspector/state-handler";
+import {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "../../inspector/state-handler";
+import Component from "./select";
 
-export default function useTextKnob(name, initialValue = 0) {
+addKnobRenderer("select", Component);
+
+export default function useSelectKnob(name, options, initialValue) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
       setKnob({
         name,
-        type: "number",
+        type: "select",
+        options,
         value,
         onChange: value => {
           setValue(value);

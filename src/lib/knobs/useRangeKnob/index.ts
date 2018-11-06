@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react";
-import { setKnob, removeKnob } from "../inspector/state-handler";
+import {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "../../inspector/state-handler";
+import Component from "./range";
 
-export default function useBooleanKnob(name, initialValue = false) {
+addKnobRenderer("range", Component);
+
+export default function useRangeKnob(
+  name,
+  { initialValue, min, max } = { initialValue: 0, min: 0, max: 100 }
+) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
       setKnob({
         name,
-        type: "boolean",
+        type: "range",
         value,
+        min,
+        max,
         onChange: value => {
           setValue(value);
         }
@@ -20,5 +32,6 @@ export default function useBooleanKnob(name, initialValue = false) {
   useEffect(() => {
     return () => removeKnob(name);
   }, []);
+
   return [value, setValue];
 }

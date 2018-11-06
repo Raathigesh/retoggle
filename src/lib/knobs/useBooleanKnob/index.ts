@@ -1,14 +1,19 @@
-import { useState, useContext, useEffect } from "react";
-import { setKnob, removeKnob } from "../inspector/state-handler";
+import { useState, useEffect } from "react";
+import {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "../../inspector/state-handler";
+import Component from "./boolean";
+addKnobRenderer("boolean", Component);
 
-export default function useSelectKnob(name, options, initialValue) {
+export default function useBooleanKnob(name, initialValue = false) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
       setKnob({
         name,
-        type: "select",
-        options,
+        type: "boolean",
         value,
         onChange: value => {
           setValue(value);
@@ -21,6 +26,5 @@ export default function useSelectKnob(name, options, initialValue) {
   useEffect(() => {
     return () => removeKnob(name);
   }, []);
-
   return [value, setValue];
 }

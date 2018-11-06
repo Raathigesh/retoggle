@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
-import { setKnob, removeKnob } from "../inspector/state-handler";
+import {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "../../inspector/state-handler";
+import Component from "./number";
 
-export default function useRangeKnob(
-  name,
-  { initialValue, min, max } = { initialValue: 0, min: 0, max: 100 }
-) {
+addKnobRenderer("number", Component);
+
+export default function useTextKnob(name, initialValue = 0) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
       setKnob({
         name,
-        type: "range",
+        type: "number",
         value,
-        min,
-        max,
         onChange: value => {
           setValue(value);
         }

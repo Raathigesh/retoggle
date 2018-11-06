@@ -4,7 +4,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const path = require("path");
 
 module.exports = env => ({
-  entry: "./src/example/index.js",
+  entry: "./src/example/index.tsx",
   mode: env.production ? "production" : "development",
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -46,7 +46,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Reignite",
+      title: "InspectHooks",
       inject: false,
       template: require("html-webpack-template"),
       appMountId: "root"

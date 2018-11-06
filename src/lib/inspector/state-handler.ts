@@ -2,6 +2,7 @@
 class StateHandler {
   public logs: any;
   public knobs: any;
+  public knobRenderers: any = {};
 
   public logSubscriber: (log: any) => void;
   public knobSubscriber: (knob: any) => void;
@@ -63,6 +64,14 @@ class StateHandler {
       delete this.knobs[name];
     }
   };
+
+  public addKnobRenderer = (name, component) => {
+    this.knobRenderers[name] = component;
+  };
+
+  public getKnobRenderer = name => {
+    return this.knobRenderers[name];
+  };
 }
 
 // singleton
@@ -78,3 +87,5 @@ export const setLog = stateHandler.setLog;
 export const removeLog = stateHandler.removeLog;
 export const setKnob = stateHandler.setKnob;
 export const removeKnob = stateHandler.removeKnob;
+export const addKnobRenderer = stateHandler.addKnobRenderer;
+export const getKnobRenderer = stateHandler.getKnobRenderer;
