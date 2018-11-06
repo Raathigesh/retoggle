@@ -10,7 +10,7 @@ addKnobRenderer("range", Component);
 
 export default function useRangeKnob(
   name,
-  { initialValue, min, max } = { initialValue: 0, min: 0, max: 100 }
+  { initialValue = 0, min = 0, max = 100 }
 ) {
   const [value, setValue] = useState(initialValue);
   useEffect(

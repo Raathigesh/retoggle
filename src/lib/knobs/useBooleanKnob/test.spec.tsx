@@ -28,9 +28,14 @@ describe("Boolean Knob", () => {
   });
 
   it("should change value when clicked", () => {
-    const { getByText, container, asFragment } = render(<BooleanExample />);
+    const {
+      getByText,
+      container,
+      asFragment,
+      getByTestId: ComponentGetId
+    } = render(<BooleanExample />);
 
     fireEvent.click(getByTestId(document as any, "My Knob"));
-    // expect(getByTestId("value").innerHTML).toBe("False");
+    expect(ComponentGetId("value").innerHTML).toBe("False");
   });
 });
