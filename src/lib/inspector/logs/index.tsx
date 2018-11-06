@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Activity } from "react-feather";
 import styled from "styled-components";
+import { haveLogs, addLogSubscriber, getLogs } from "../state-handler";
 import Log from "./log";
 
 const Container = styled.div``;
@@ -16,16 +17,16 @@ const Title = styled.div`
 export default function Logs() {
   const [logs, setLogs] = useState({});
   useEffect(() => {
-    if (window.logs) {
-      setLogs({ ...window.logs });
+    if (haveLogs()) {
+      setLogs({ ...getLogs() });
     }
 
-    window.setLog = log => {
-      setLogs(previousLogs => ({
+    addLogSubscriber((log: any) => {
+      setLogs((previousLogs: any) => ({
         ...previousLogs,
         ...{ [log.name]: log }
       }));
-    };
+    });
   }, []);
 
   return (
@@ -34,7 +35,7 @@ export default function Logs() {
         <Activity size={12} />
         <span>Logs</span>
       </Title>
-      {Object.values(logs).map(log => (
+      {Object.values(logs).map((log: any) => (
         <Log {...log.props} />
       ))}
     </Container>

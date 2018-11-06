@@ -1,5 +1,5 @@
 import React from "react";
-import KnobFrame from "./frame";
+import KnobFrame from "../../inspector/knobs/frame";
 
 export default function ToggleComponent({ name, value, min, max, onChange }) {
   return (

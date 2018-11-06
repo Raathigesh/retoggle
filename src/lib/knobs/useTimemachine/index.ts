@@ -1,7 +1,14 @@
 // https://twitter.com/dan_abramov/status/1058870951373344769
 
 import { useEffect, useReducer } from "react";
-import { setKnob, removeKnob } from "../inspector/global-state";
+import {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "../../inspector/state-handler";
+import Component from "./timemachine";
+
+addKnobRenderer("timemachine", Component);
 
 export default function useTimeMachine(name, currentState) {
   const [machineState, dispatch] = useReducer(
@@ -34,7 +41,6 @@ export default function useTimeMachine(name, currentState) {
 
   useEffect(
     () => {
-      console.log(history.length);
       setKnob({
         name,
         type: "timemachine",

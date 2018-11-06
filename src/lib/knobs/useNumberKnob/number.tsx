@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import KnobFrame from "./frame";
+import KnobFrame from "../../inspector/knobs/frame";
 
 const Input = styled.input`
   border: none;

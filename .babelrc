@@ -1,12 +1,18 @@
 {
   "presets": [
+    "@babel/preset-react",
     [
-      "env",
+      "@babel/preset-typescript",
       {
-        "modules": false
+        "isTSX": true,
+        "allExtensions": true
       }
     ],
-    "stage-0",
-    "react"
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

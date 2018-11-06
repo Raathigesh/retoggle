@@ -11,7 +11,7 @@ const Container = styled.div`
   background-color: #f8f7f6;
   flex-direction: column;
   width: 300px;
-  position: absolute;
+  position: ${props => (props.usePortal ? "absolute" : "relative")};
   top: 0;
   right: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -29,11 +29,11 @@ const Content = styled.div`
   padding: 15px;
 `;
 
-export default function Inspector() {
+export default function Inspector({ usePortal = true }) {
   const [isCollapsed, setCollapsed] = useState(false);
 
   const handleExpandToggle = () => {
-    localStorage.setItem("storyhooksIsCollapsed", !isCollapsed);
+    localStorage.setItem("storyhooksIsCollapsed", (!isCollapsed).toString());
     setCollapsed(!isCollapsed);
   };
 
@@ -43,9 +43,9 @@ export default function Inspector() {
     setCollapsed(isCollapsedLocalStorage);
   }, []);
 
-  return createPortal(
+  const content = (
     <React.Fragment>
-      <Container>
+      <Container usePortal={usePortal}>
         {!isCollapsed && (
           <Content>
             <Logs />
@@ -56,7 +56,12 @@ export default function Inspector() {
           {isCollapsed ? <ChevronDown size={12} /> : <ChevronUp size={12} />}
         </CollapseHandle>
       </Container>
-    </React.Fragment>,
-    mount()
+    </React.Fragment>
   );
+
+  if (usePortal) {
+    return createPortal(content, mount());
+  }
+
+  return content;
 }
