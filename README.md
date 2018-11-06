@@ -1,7 +1,6 @@
 # storyhooks
 
 [![Build Status][build-badge]][build]
-[![MIT License][license-badge]][license]
 
 ## useLog(label, value)
 
