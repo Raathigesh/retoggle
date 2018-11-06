@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { setKnob, removeKnob } from "../inspector/global-state";
+import { setKnob, removeKnob } from "../inspector/state-handler";
 
 export default function useRangeKnob(
   name,

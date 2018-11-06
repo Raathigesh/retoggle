@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Sliders, Activity } from "react-feather";
+import { haveKnobs, addKnobSubscriber, getKnobs } from "../state-handler";
 import Toggle from "./renderers/boolean";
 import Text from "./renderers/text";
 import Number from "./renderers/number";
@@ -45,16 +46,16 @@ export default function Knobs() {
   const [knobs, setKnobs] = useState({});
 
   useEffect(() => {
-    if (window.knobs) {
-      setKnobs({ ...window.knobs });
+    if (haveKnobs()) {
+      setKnobs({ ...getKnobs() });
     }
 
-    window.setKnob = knob => {
+    addKnobSubscriber(knob => {
       setKnobs(previousKnobs => ({
         ...previousKnobs,
         ...{ [knob.name]: knob }
       }));
-    };
+    });
   }, []);
 
   return (
