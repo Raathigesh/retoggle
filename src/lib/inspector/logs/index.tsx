@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Activity } from "react-feather";
 import styled from "styled-components";
 import { haveLogs, addLogSubscriber, getLogs } from "../state-handler";
 import Log from "./log";

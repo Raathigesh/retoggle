@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children, ReactElement } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -33,7 +33,13 @@ const Value = styled.div`
   flex-grow: 1;
 `;
 
-export default function KnobFrame({ icon, label, children }) {
+interface Props {
+  icon: React.ReactElement<any>;
+  label: string;
+  children: ReactElement<any>;
+}
+
+export default function KnobFrame({ icon, label, children }: Props) {
   return (
     <Container>
       <Label>

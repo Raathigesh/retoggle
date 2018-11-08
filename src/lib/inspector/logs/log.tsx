@@ -31,7 +31,7 @@ const Value = styled.div`
   flex-grow: 1;
 `;
 
-function getRenderer(value) {
+function getRenderer(value: any) {
   if (typeof value === "object") {
     return (
       <Inspector
@@ -45,7 +45,12 @@ function getRenderer(value) {
   return value;
 }
 
-export default function Log({ name, value }) {
+interface Props {
+  name: string;
+  value: any;
+}
+
+export default function Log({ name, value }: Props) {
   const renderer = getRenderer(value);
 
   return (

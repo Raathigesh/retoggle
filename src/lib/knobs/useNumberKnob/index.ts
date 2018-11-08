@@ -8,7 +8,7 @@ import Component from "./number";
 
 addKnobRenderer("number", Component);
 
-export default function useTextKnob(name, initialValue = 0) {
+export default function useTextKnob(name: string, initialValue = 0) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
@@ -16,7 +16,7 @@ export default function useTextKnob(name, initialValue = 0) {
         name,
         type: "number",
         value,
-        onChange: value => {
+        onChange: (value: number) => {
           setValue(value);
         }
       });

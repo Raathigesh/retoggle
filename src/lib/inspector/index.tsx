@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { ChevronUp, ChevronDown } from "react-feather";
@@ -8,7 +8,7 @@ import { mount } from "./mount";
 
 const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 
-const Container = styled.div`
+const Container = styled.div<{ usePortal: boolean }>`
   display: flex;
   background-color: #f8f7f6;
   flex-direction: column;
@@ -31,11 +31,17 @@ const Content = styled.div`
   padding: 15px;
 `;
 
+interface Props {
+  usePortal: boolean;
+  width: string;
+  height: string;
+}
+
 export default function Inspector({
   usePortal = true,
   width = "300px",
   height
-}) {
+}: Props) {
   const [isCollapsed, setCollapsed] = useState(false);
 
   const handleExpandToggle = () => {

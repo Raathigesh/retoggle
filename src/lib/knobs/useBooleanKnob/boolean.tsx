@@ -1,8 +1,8 @@
 import React from "react";
 const { Checkbox } = require("@smooth-ui/core-sc");
 import { ToggleLeft } from "react-feather";
-import KnobFrame from "../../inspector/knobs/frame";
 import styled from "styled-components";
+import KnobFrame from "../../inspector/knobs/frame";
 
 const SyledCheckBox = styled(Checkbox)`
   input:checked + .sui-checkbox-content {
@@ -11,7 +11,13 @@ const SyledCheckBox = styled(Checkbox)`
   }
 `;
 
-export default function ToggleComponent({ name, value, onChange }) {
+interface Props {
+  name: string;
+  value: boolean;
+  onChange: (value: boolean) => void;
+}
+
+export default function ToggleComponent({ name, value, onChange }: Props) {
   return (
     <KnobFrame label={name} icon={<ToggleLeft size={11} />}>
       <SyledCheckBox
@@ -20,7 +26,7 @@ export default function ToggleComponent({ name, value, onChange }) {
         defaultChecked={value}
         backgroundColor="purple"
         ml={-3.75}
-        onChange={e => {
+        onChange={(e: any) => {
           onChange(e.target.checked);
         }}
       />

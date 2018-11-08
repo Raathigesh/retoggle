@@ -9,7 +9,7 @@ import Component from "./range";
 addKnobRenderer("range", Component);
 
 export default function useRangeKnob(
-  name,
+  name: string,
   { initialValue = 0, min = 0, max = 100 }
 ) {
   const [value, setValue] = useState(initialValue);
@@ -21,7 +21,7 @@ export default function useRangeKnob(
         value,
         min,
         max,
-        onChange: value => {
+        onChange: (value: any) => {
           setValue(value);
         }
       });

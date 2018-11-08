@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Sliders, Activity } from "react-feather";
 import {
   haveKnobs,
   addKnobSubscriber,
@@ -9,14 +8,6 @@ import {
 } from "../state-handler";
 
 const Container = styled.div``;
-
-const Title = styled.div`
-  font-size: 14px;
-
-  span {
-    margin-left: 5px;
-  }
-`;
 
 export default function Knobs() {
   const [knobs, setKnobs] = useState({});

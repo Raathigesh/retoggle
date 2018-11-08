@@ -5,6 +5,7 @@ import {
   addKnobRenderer
 } from "../../inspector/state-handler";
 import Component from "./boolean";
+
 addKnobRenderer("boolean", Component);
 
 export default function useBooleanKnob(name: string, initialValue = false) {

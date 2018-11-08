@@ -7,11 +7,11 @@ class StateHandler {
   public logSubscriber: (log: any) => void;
   public knobSubscriber: (knob: any) => void;
 
-  public addLogSubscriber = subscriber => {
+  public addLogSubscriber = (subscriber: any) => {
     this.logSubscriber = subscriber;
   };
 
-  public addKnobSubscriber = subscriber => {
+  public addKnobSubscriber = (subscriber: any) => {
     this.knobSubscriber = subscriber;
   };
 
@@ -31,7 +31,7 @@ class StateHandler {
     return this.knobs;
   };
 
-  public setLog = log => {
+  public setLog = (log: any) => {
     if (this.logSubscriber) {
       this.logSubscriber(log);
     }
@@ -42,13 +42,13 @@ class StateHandler {
     };
   };
 
-  public removeLog = name => {
+  public removeLog = (name: string) => {
     if (this.logs) {
       delete this.logs[name];
     }
   };
 
-  public setKnob = knob => {
+  public setKnob = (knob: any) => {
     if (this.knobSubscriber) {
       this.knobSubscriber(knob);
     }
@@ -59,17 +59,17 @@ class StateHandler {
     };
   };
 
-  public removeKnob = name => {
+  public removeKnob = (name: string) => {
     if (this.knobs) {
       delete this.knobs[name];
     }
   };
 
-  public addKnobRenderer = (name, component) => {
+  public addKnobRenderer = (name: string, component: any) => {
     this.knobRenderers[name] = component;
   };
 
-  public getKnobRenderer = name => {
+  public getKnobRenderer = (name: string) => {
     return this.knobRenderers[name];
   };
 }

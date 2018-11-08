@@ -1,5 +1,4 @@
 import * as React from "react";
-import { render } from "react-dom";
 import { Slider, Rail, Handles, Tracks } from "react-compound-slider";
 import { Handle, Track } from "./parts";
 
