@@ -15,6 +15,7 @@ export default function ToggleComponent({ name, value, onChange }) {
   return (
     <KnobFrame label={name} icon={<ToggleLeft size={11} />}>
       <SyledCheckBox
+        size="sm"
         data-testid={name}
         defaultChecked={value}
         backgroundColor="purple"

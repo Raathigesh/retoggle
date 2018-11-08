@@ -9,6 +9,7 @@ export default function TextComponent({ name, value, onChange }) {
       <Input
         type="text"
         width="100%"
+        size="sm"
         value={value}
         onChange={e => {
           onChange(e.target.value);

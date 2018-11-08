@@ -32,7 +32,7 @@ export const Handle: React.SFC<IHandleProps> = ({
       marginLeft: "-3px",
       height: 15,
       cursor: "pointer",
-      backgroundColor: "rgb(74, 39, 255)"
+      backgroundColor: "wheat"
     }}
     {...getHandleProps(id)}
   />
