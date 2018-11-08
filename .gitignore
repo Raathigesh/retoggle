@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 dist
+.docz
 
 # testing
 /coverage

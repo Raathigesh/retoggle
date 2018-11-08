@@ -14,7 +14,9 @@
     "test": "jest",
     "build-docs": "cross-env BABEL_ENV='production' rimraf dist && webpack --env.production --config ./config/webpack.dev.config.js",
     "build": "cross-env BABEL_ENV='production' rimraf lib && webpack --env.production --config ./config/webpack.lib.config.js",
-    "clean": "rimraf ./dist && rimraf ./lib"
+    "clean": "rimraf ./dist && rimraf ./lib",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
   },
   "eslintConfig": {},
   "browserslist": [
@@ -43,6 +45,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
+    "docz": "^0.12.9",
     "html-webpack-plugin": "^3.2.0",
     "html-webpack-template": "^6.2.0",
     "jest": "^23.6.0",
