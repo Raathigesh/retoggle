@@ -1,0 +1,33 @@
+---
+name: useSelectKnob
+---
+import {useState} from 'react';
+import { Playground } from "docz";
+import { Inspector, useSelectKnob } from "../src/lib";
+
+## useSelectKnob(label, options, initialValue)
+
+Displays a select box with options.
+
+- `label` - A label for the select box
+- `options` - A array of strings or numbers which should be displayed as options
+- `initialValue` - A value from the options array to use as the initial value
+
+
+## Usage
+<Playground>
+{() => {
+     const [selectedOption, setSelection] = useSelectKnob(
+        "Select",
+        ["Orange", "Apple"],
+        "Apple"
+    );
+
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            {selectedOption}
+        </React.Fragment>
+    )
+  }}
+</Playground>

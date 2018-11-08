@@ -1,0 +1,28 @@
+---
+name: useNumberKnob
+---
+import {useState} from 'react';
+import { Playground } from "docz";
+import { Inspector, useNumberKnob } from "../src/lib";
+
+# useNumberKnob(label, [initialValue])
+
+Displays a number box in the inspector panel and provides you the number and a method to set the number.
+
+- `label` - A label for the number box
+- `initialValue` - the Initial value of the number box. Defaults to `0`.
+
+
+## Usage
+<Playground>
+{() => {
+    const [number, setNumber] = useNumberKnob("Number", 10);
+
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            {number}
+        </React.Fragment>
+    )
+  }}
+</Playground>

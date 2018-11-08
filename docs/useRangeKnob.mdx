@@ -1,0 +1,34 @@
+---
+name: useRangeKnob
+---
+import {useState} from 'react';
+import { Playground } from "docz";
+import { Inspector, useRangeKnob } from "../src/lib";
+
+# useRangeKnob(label, [{initialValue, mix, max}])
+
+Displays a slider in inspector panel and provides you the number and a method to set the number.
+
+- `label` - A label for the range
+- `initialValue` - The initial value of the slider. Defaults to `0`.
+- `min` - Minimum value of the slider. Defaults to `0`.
+- `max` - Maximum value of the slider. Defaults to `0`.
+
+
+## Usage
+<Playground>
+{() => {
+    const [range, setRance] = useRangeKnob("Range", {
+        initialValue: 4,
+        mix: 40,
+        max: 300
+    });
+
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            {range}
+        </React.Fragment>
+    )
+  }}
+</Playground>

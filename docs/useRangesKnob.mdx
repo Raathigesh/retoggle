@@ -1,0 +1,42 @@
+---
+name: useRangesKnob
+---
+import {useState} from 'react';
+import { Playground } from "docz";
+import { Inspector, useRangesKnob } from "../src/lib";
+
+## useRangesKnob(label, {[name]: {initialValue, mix, max}})
+
+Provides multiple range contorls. A wrapper around `useRangeKnob` for ease of use.
+
+- `label` - A label for the range group
+- `ranges` - An object with keys as range names and values as follows.
+  - `initialValue` - The initial value of the slider. Defaults to `0`.
+  - `min` - Minimum value of the slider. Defaults to `0`.
+  - `max` - Maximum value of the slider. Defaults to `0`.
+
+
+## Usage
+<Playground>
+{() => {
+   const rangeValues = useRangesKnob("Ranges", {
+    xAxis: {
+      initialValue: 4,
+      mix: 40,
+      max: 300
+    },
+    yAxis: {
+      initialValue: 4,
+      mix: 40,
+      max: 300
+    }
+  });
+
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            {JSON.stringify(rangeValues)}
+        </React.Fragment>
+    )
+  }}
+</Playground>

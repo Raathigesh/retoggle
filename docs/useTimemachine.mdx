@@ -1,0 +1,31 @@
+---
+name: useTimemachine
+---
+import {useState} from "react";
+import { Playground } from "docz";
+import { Inspector, useTimemachine } from "../src/lib";
+
+## useTimemachine(label, value)
+
+Tracks the state changes of the value and allows going back in time by using the slider.
+
+- `label` - A label for the slider
+- `value` - A state value to track
+
+
+## Usage
+
+<Playground>
+{() => {
+    const [state, setState] = useState("Hello");
+    const timeTravelledState = useTimemachine("State timemachine", state);
+
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            <input type="text" value={timeTravelledState} onChange={e => setState(e.target.value)} />
+            {timeTravelledState}
+        </React.Fragment>
+    )
+  }}
+</Playground>

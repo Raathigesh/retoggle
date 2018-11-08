@@ -1,14 +1,29 @@
 ---
 name: useLog
 ---
-
+import {useState} from 'react';
 import { Playground } from "docz";
-import { useLog } from "../src/lib";
+import { Inspector, useLog } from "../src/lib";
 
-# Button
+# useLog(label, value)
 
-## Basic usage
+Displays the value in the inspector panel
 
+- `label` - A label for the log
+- `value` - The value that should be displayed
+
+
+## Usage
 <Playground>
+{() => {
+    const [state, setState] = useState({value: 5});
+    useLog('Value', state);
 
+    return (
+        <React.Fragment>
+            <Inspector usePortal={false}/>
+            {state.value}
+        </React.Fragment>
+    )
+  }}
 </Playground>
