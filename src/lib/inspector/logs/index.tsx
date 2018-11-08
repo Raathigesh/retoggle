@@ -6,14 +6,6 @@ import Log from "./log";
 
 const Container = styled.div``;
 
-const Title = styled.div`
-  font-size: 14px;
-
-  span {
-    margin-left: 5px;
-  }
-`;
-
 export default function Logs() {
   const [logs, setLogs] = useState({});
   useEffect(() => {
@@ -29,12 +21,12 @@ export default function Logs() {
     });
   }, []);
 
+  if (Object.entries(logs).length == 0) {
+    return null;
+  }
+
   return (
     <Container>
-      <Title>
-        <Activity size={12} />
-        <span>Logs</span>
-      </Title>
       {Object.values(logs).map((log: any) => (
         <Log {...log.props} />
       ))}

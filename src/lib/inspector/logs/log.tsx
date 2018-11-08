@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Info } from "react-feather";
 import Inspector, { chromeLight } from "react-inspector";
 
 const Container = styled.div`
@@ -13,19 +14,22 @@ const Container = styled.div`
 `;
 
 const Name = styled.div`
+  display: flex;
+  align-items: center;
   padding-right: 10px;
-  color: #2196f3;
-`;
-
-const Title = styled.div`
-  font-size: 14px;
+  color: #737576;
+  width: 150px;
+  min-width: 150px;
 
   span {
-    margin-left: 5px;
+    margin-left: 3px;
   }
 `;
 
-const Value = styled.div``;
+const Value = styled.div`
+  display: flex;
+  flex-grow: 1;
+`;
 
 function getRenderer(value) {
   if (typeof value === "object") {
@@ -46,7 +50,10 @@ export default function Log({ name, value }) {
 
   return (
     <Container>
-      <Name>{name}</Name>
+      <Name>
+        <Info size={11} />
+        <span>{name}</span>
+      </Name>
       <Value>{renderer}</Value>
     </Container>
   );

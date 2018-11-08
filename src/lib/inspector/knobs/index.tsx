@@ -8,9 +8,7 @@ import {
   getKnobRenderer
 } from "../state-handler";
 
-const Container = styled.div`
-  margin-top: 20px;
-`;
+const Container = styled.div``;
 
 const Title = styled.div`
   font-size: 14px;
@@ -36,12 +34,12 @@ export default function Knobs() {
     });
   }, []);
 
+  if (Object.entries(knobs).length == 0) {
+    return null;
+  }
+
   return (
     <Container>
-      <Title>
-        <Sliders size={12} />
-        <span>Knobs</span>
-      </Title>
       {Object.entries(knobs).map(([name, knob]: any) => {
         const Component = getKnobRenderer(knob.type);
         return <Component {...knob} />;

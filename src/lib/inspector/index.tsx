@@ -5,7 +5,6 @@ import { ChevronUp, ChevronDown } from "react-feather";
 import Knobs from "./knobs";
 import Logs from "./logs";
 import { mount } from "./mount";
-import { create } from "domain";
 
 const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 
@@ -13,12 +12,12 @@ const Container = styled.div`
   display: flex;
   background-color: #f8f7f6;
   flex-direction: column;
-  width: 300px;
   position: ${props => (props.usePortal ? "absolute" : "relative")};
   top: 0;
   right: 0;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   box-shadow: -3px 3px 23px -5px rgba(199, 199, 199, 0.87);
+  overflow: auto;
 `;
 
 const CollapseHandle = styled.div`
@@ -32,7 +31,11 @@ const Content = styled.div`
   padding: 15px;
 `;
 
-export default function Inspector({ usePortal = true }) {
+export default function Inspector({
+  usePortal = true,
+  width = "300px",
+  height
+}) {
   const [isCollapsed, setCollapsed] = useState(false);
 
   const handleExpandToggle = () => {
@@ -49,7 +52,7 @@ export default function Inspector({ usePortal = true }) {
   const content = (
     <React.Fragment>
       <GlobalReset />
-      <Container usePortal={usePortal}>
+      <Container usePortal={usePortal} style={{ width, height }}>
         {!isCollapsed && (
           <Content>
             <Logs />

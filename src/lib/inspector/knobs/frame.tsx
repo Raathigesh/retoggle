@@ -8,19 +8,38 @@ const Container = styled.div`
   padding-top: 3px;
   padding-bottom: 3px;
   border-bottom: 1px solid #eaeaea;
+  min-height: 25px;
 `;
 
 const Label = styled.div`
+  display: flex;
+  align-items: center;
   padding-right: 10px;
-  color: #2196f3;
+  color: #737576;
   font-size: 12px;
-`;
-const Value = styled.div``;
+  width: 150px;
+  min-width: 150px;
 
-export default function KnobFrame({ label, children }) {
+  span {
+    margin-left: 3px;
+  }
+
+  svg {
+    min-width: 11px;
+  }
+`;
+const Value = styled.div`
+  display: flex;
+  flex-grow: 1;
+`;
+
+export default function KnobFrame({ icon, label, children }) {
   return (
     <Container>
-      <Label>{label}</Label>
+      <Label>
+        {icon}
+        <span>{label}</span>
+      </Label>
       <Value>{children}</Value>
     </Container>
   );

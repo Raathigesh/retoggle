@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@smooth-ui/core-sc": "^7.0.4",
+    "@types/styled-components": "^4.0.3",
     "babel-jest": "^23.6.0",
     "react-compound-slider": "^0.16.2",
     "react-feather": "^1.1.4",

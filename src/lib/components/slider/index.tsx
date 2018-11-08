@@ -5,17 +5,17 @@ import { Handle, Track } from "./parts";
 
 const sliderStyle: React.CSSProperties = {
   display: "flex",
-  width: "160px",
+  width: "100%",
   position: "relative"
 };
 
 const railStyle: React.CSSProperties = {
   position: "absolute",
-  width: "160px",
+  width: "100%",
   height: 15,
   borderRadius: 2,
   cursor: "pointer",
-  backgroundColor: "rgb(155,155,155)"
+  backgroundColor: "rgb(228, 228, 228)"
 };
 
 interface Props {
@@ -27,7 +27,7 @@ interface Props {
 
 export default function CustomSlider({ min, max, value, onChange }: Props) {
   return (
-    <div style={{ height: "15px", width: "160px" }}>
+    <div style={{ height: "15px", width: "100%" }}>
       <Slider
         mode={1}
         step={1}

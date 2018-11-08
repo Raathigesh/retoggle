@@ -8,6 +8,7 @@ export default function TextComponent({ name, value, onChange }) {
     <KnobFrame label={name}>
       <Input
         type="text"
+        width="100%"
         value={value}
         onChange={e => {
           onChange(e.target.value);

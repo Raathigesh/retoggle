@@ -32,7 +32,7 @@ export const Handle: React.SFC<IHandleProps> = ({
       marginLeft: "-3px",
       height: 15,
       cursor: "pointer",
-      backgroundColor: "#34568f"
+      backgroundColor: "rgb(74, 39, 255)"
     }}
     {...getHandleProps(id)}
   />
@@ -57,8 +57,8 @@ export const Track: React.SFC<ITrackProps> = ({
       position: "absolute",
       height: 15,
       zIndex: 1,
-      backgroundColor: "#7aa0c4",
-      borderRadius: 7,
+      backgroundColor: "rgb(74, 39, 255)",
+      borderRadius: 3,
       cursor: "pointer",
       left: `${source.percent}%`,
       width: `${target.percent - source.percent}%`
