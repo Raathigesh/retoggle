@@ -7,3 +7,9 @@ export { default as useRangeKnob } from "./knobs/useRangeKnob";
 export { default as useRangesKnob } from "./knobs/useRangesKnob";
 export { default as useSelectKnob } from "./knobs/useSelectKnob";
 export { default as useTimemachine } from "./knobs/useTimemachine";
+export {
+  setKnob,
+  removeKnob,
+  addKnobRenderer
+} from "./inspector/state-handler";
+export { default as KnobFrame } from "./inspector/knobs/frame";

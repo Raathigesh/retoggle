@@ -1,10 +1,12 @@
 import React from "react";
+const { Select } = require("@smooth-ui/core-sc");
 import KnobFrame from "../../inspector/knobs/frame";
 
 export default function SelectComponent({ name, value, options, onChange }) {
   return (
     <KnobFrame label={name}>
-      <select
+      <Select
+        size="sm"
         value={value}
         onChange={e => {
           onChange(e.target.value);
@@ -13,7 +15,7 @@ export default function SelectComponent({ name, value, options, onChange }) {
         {options.map(option => (
           <option value={option}>{option}</option>
         ))}
-      </select>
+      </Select>
     </KnobFrame>
   );
 }

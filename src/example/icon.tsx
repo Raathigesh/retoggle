@@ -12,6 +12,7 @@ import {
   useSelectKnob,
   useTimemachine
 } from "../lib";
+import useChartKnob from "./custom-chart-knob";
 
 const Container = styled.div`
   background-color: #3356d0;
@@ -51,7 +52,7 @@ export default function Icon() {
     max: 250
   });
   const [color] = useSelectKnob("Select", ["white", "wheat"], "white");
-
+  useChartKnob("Chart", timemachineValue);
   return (
     <Container
       style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}

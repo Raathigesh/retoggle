@@ -1,10 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { ChevronUp, ChevronDown } from "react-feather";
 import Knobs from "./knobs";
 import Logs from "./logs";
 import { mount } from "./mount";
+import { create } from "domain";
+
+const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 
 const Container = styled.div`
   display: flex;
@@ -45,6 +48,7 @@ export default function Inspector({ usePortal = true }) {
 
   const content = (
     <React.Fragment>
+      <GlobalReset />
       <Container usePortal={usePortal}>
         {!isCollapsed && (
           <Content>
