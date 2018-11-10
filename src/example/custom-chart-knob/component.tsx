@@ -1,31 +1,34 @@
 import React from "react";
-const {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
-} = require("recharts");
+import styled from "styled-components";
+import { Activity } from "react-feather";
+import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
+import { KnobFrame } from "../../lib";
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+
+  svg {
+    width: 100%;
+    height: 50px;
+  }
+`;
 
 export default function Chart({ data }) {
   console.log("data", data);
   return (
-    <div>
-      <LineChart width={250} height={250} data={data} margin={{ left: -30 }}>
-        <XAxis dataKey="x" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="y"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
-    </div>
+    <KnobFrame
+      label="This is a custom knob"
+      direction="column"
+      icon={<Activity size={11} />}
+    >
+      <Container>
+        <Sparklines data={data} limit={20}>
+          <SparklinesLine color="#1c8cdc" />
+          <SparklinesSpots />
+        </Sparklines>
+      </Container>
+    </KnobFrame>
   );
 }

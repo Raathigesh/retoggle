@@ -9511,6 +9511,13 @@ react-json-view@^1.19.1:
     react-lifecycles-compat "^3.0.4"
     react-textarea-autosize "^6.1.0"
 
+react-kawaii@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-kawaii/-/react-kawaii-0.6.0.tgz#60c43b44b7ea36d17dccd4a887a61dc70619c104"
+  integrity sha512-Kk4l8H+g+FBzQ64eWgEn1Yh7bAjGZdSPL0Wp1XI4n89yi1I7x3DMfSrQqMEVQtIfpH23LdjCTbGzCXkoFCm/mg==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -9624,6 +9631,13 @@ react-smooth@~1.0.0:
     prop-types "^15.6.0"
     raf "^3.4.0"
     react-transition-group "^2.5.0"
+
+react-sparklines@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-sparklines/-/react-sparklines-1.7.0.tgz#9b1d97e8c8610095eeb2ad658d2e1fcf91f91a60"
+  integrity sha512-bJFt9K4c5Z0k44G8KtxIhbG+iyxrKjBZhdW6afP+R7EnIq+iKjbWbEFISrf3WKNFsda+C46XAfnX0StS5fbDcg==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-testing-library@^5.2.3:
   version "5.2.3"

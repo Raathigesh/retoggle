@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Feather } from "react-feather";
+import { Ghost } from "react-kawaii";
 import {
   Inspector,
   useLog,
@@ -44,35 +45,34 @@ export default function Icon() {
   });
 
   const [visibility] = useBooleanKnob("Icon Visibility", true);
-  const timemachineValue = useTimemachine("Textbox timemachine", textValue);
-  useLog("Text box value", timemachineValue);
+
+  useLog("Visibility", {
+    visibility
+  });
 
   const [borderWidth] = useNumberKnob("Border Width");
-  const [rangeKnobValue] = useRangeKnob("Icon Size", {
-    initialValue: 85,
+  const [rangeKnobValue] = useRangeKnob("Ghost Size", {
+    initialValue: 240,
     min: 0,
-    max: 250
+    max: 500
   });
-  const [color] = useSelectKnob("Select", ["white", "wheat"], "white");
-  const [colorValue] = useColor("Color");
-  const [obj, setObj] = useObject("Object", {});
+  const [mood] = useSelectKnob(
+    "Mood",
+    ["sad", "shocked", "happy", "blissful", "lovestruck", "excited"],
+    "blissful"
+  );
+  const [colorValue] = useColorKnob("Color", "wheat");
+  const [obj, setObj] = useObjectKnob("Object", {});
+  const timemachineValue = useTimemachine("Textbox timemachine", colorValue);
   useChartKnob("Chart", timemachineValue);
-  console.log(colorValue);
+
   return (
     <Container
       style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}
     >
-      {JSON.stringify(obj)}
-      {visibility && <Feather size={rangeKnobValue} color={colorValue} />}
-      <InputBox
-        type="text"
-        value={timemachineValue && timemachineValue.text}
-        onChange={e =>
-          setTextValue({
-            text: e.target.value
-          })
-        }
-      />
+      {visibility && (
+        <Ghost size={rangeKnobValue} mood={mood} color={timemachineValue} />
+      )}
     </Container>
   );
 }

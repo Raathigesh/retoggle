@@ -1,5 +1,5 @@
 export default {
-  title: "Storyhooks",
+  title: "Retoggle",
   description: "Experiment with your components using hooks",
   typescript: true,
   themeConfig: {
@@ -9,7 +9,8 @@ export default {
       link: "#223f5a"
     },
     logo: {
-      src: "./Retoggle.png",
+      src:
+        "https://raw.githubusercontent.com/Raathigesh/storyhooks/master/docs/Retoggle.png",
       width: 200
     },
     styles: {

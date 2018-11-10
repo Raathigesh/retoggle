@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { setKnob, removeKnob, addKnobRenderer } from "../../lib";
 import Component from "./component";
 
@@ -9,13 +9,8 @@ export default function useChartKnob(name, value) {
 
   useEffect(
     () => {
-      setData([
-        ...data,
-        {
-          x: value.text,
-          y: value.text.length
-        }
-      ]);
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      setData([...data, randomNumber]);
 
       setKnob({
         name,

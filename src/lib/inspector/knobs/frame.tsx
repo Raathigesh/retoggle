@@ -2,10 +2,14 @@ import React, { ReactElement, useContext } from "react";
 import styled from "styled-components";
 import ThemeContext from "../theme";
 
-const Container = styled.div<{ dividerColor: string }>`
+const Container = styled.div<{
+  dividerColor: string;
+  direction: "column" | "row";
+}>`
   display: flex;
+  flex-direction: ${props => props.direction};
   justify-content: space-between;
-  align-items: center;
+  align-items: ${props => (props.direction === "row" ? "center" : "")};
   padding-top: 3px;
   padding-bottom: 3px;
   border-bottom: 1px solid ${props => props.dividerColor};
@@ -37,17 +41,28 @@ const Value = styled.div`
 interface Props {
   icon: React.ReactElement<any>;
   label: string;
+  direction: "column" | "row";
   children: ReactElement<any>;
   style?: any;
 }
 
-export default function KnobFrame({ icon, label, children, style }: Props) {
+export default function KnobFrame({
+  icon,
+  label,
+  children,
+  style,
+  direction = "row"
+}: Props) {
   const {
     knob: { label: themeLabel }
   } = useContext(ThemeContext);
 
   return (
-    <Container dividerColor={themeLabel.dividerColor} style={style}>
+    <Container
+      direction={direction}
+      dividerColor={themeLabel.dividerColor}
+      style={style}
+    >
       <Label color={themeLabel.color}>
         {icon}
         <span>{label}</span>
