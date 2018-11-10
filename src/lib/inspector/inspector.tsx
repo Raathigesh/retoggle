@@ -29,15 +29,15 @@ const Content = styled.div`
 `;
 
 interface Props {
-  width: string;
-  height: string;
-  usePortal: boolean;
+  width?: string;
+  height?: string;
+  usePortal?: boolean;
 }
 
 export default function Inspector({
   width = "300px",
   height,
-  usePortal
+  usePortal = true
 }: Props) {
   const [isCollapsed, setCollapsed] = useState(false);
   const themeContext = useContext(ThemeContext);

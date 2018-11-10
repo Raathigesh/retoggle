@@ -27,7 +27,7 @@ export interface Theme {
 }
 
 export const DefaultTheme: Theme = {
-  primaryColor: "#4a27ff",
+  primaryColor: "#223f5a",
   backgroundColor: "#f8f7f6",
   collapseHandle: {
     backgroundColor: "#dfdfdf"
@@ -39,8 +39,8 @@ export const DefaultTheme: Theme = {
     },
     slider: {
       railColor: "rgb(228, 228, 228)",
-      handleColor: "#4a27ff",
-      activeTrackColor: "wheat"
+      handleColor: "#223f5a",
+      activeTrackColor: "#ffca20"
     }
   },
   log: {

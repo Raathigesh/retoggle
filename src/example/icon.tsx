@@ -11,7 +11,8 @@ import {
   useRangesKnob,
   useSelectKnob,
   useTimemachine,
-  useColor
+  useColor,
+  useObject
 } from "../lib";
 import useChartKnob from "./custom-chart-knob";
 
@@ -54,12 +55,14 @@ export default function Icon() {
   });
   const [color] = useSelectKnob("Select", ["white", "wheat"], "white");
   const [colorValue] = useColor("Color");
+  const [obj, setObj] = useObject("Object", {});
   useChartKnob("Chart", timemachineValue);
   console.log(colorValue);
   return (
     <Container
       style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}
     >
+      {JSON.stringify(obj)}
       {visibility && <Feather size={rangeKnobValue} color={colorValue} />}
       <InputBox
         type="text"

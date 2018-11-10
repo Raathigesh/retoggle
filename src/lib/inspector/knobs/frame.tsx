@@ -38,15 +38,16 @@ interface Props {
   icon: React.ReactElement<any>;
   label: string;
   children: ReactElement<any>;
+  style?: any;
 }
 
-export default function KnobFrame({ icon, label, children }: Props) {
+export default function KnobFrame({ icon, label, children, style }: Props) {
   const {
     knob: { label: themeLabel }
   } = useContext(ThemeContext);
 
   return (
-    <Container dividerColor={themeLabel.dividerColor}>
+    <Container dividerColor={themeLabel.dividerColor} style={style}>
       <Label color={themeLabel.color}>
         {icon}
         <span>{label}</span>

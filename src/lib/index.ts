@@ -8,6 +8,7 @@ export { default as useRangesKnob } from "./knobs/useRangesKnob";
 export { default as useSelectKnob } from "./knobs/useSelectKnob";
 export { default as useTimemachine } from "./knobs/useTimemachine";
 export { default as useColor } from "./knobs/useColor";
+export { default as useObject } from "./knobs/useObject";
 export {
   setKnob,
   removeKnob,

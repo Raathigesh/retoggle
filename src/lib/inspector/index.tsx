@@ -8,9 +8,9 @@ import InspectorBody from "./inspector";
 const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 
 interface Props {
-  usePortal: boolean;
-  width: string;
-  height: string;
+  usePortal?: boolean;
+  width?: string;
+  height?: string;
   theme?: Theme;
 }
 
