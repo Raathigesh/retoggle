@@ -8,7 +8,7 @@ import Component from "./color";
 
 addKnobRenderer("color", Component);
 
-export default function useColorKnob(name: string, initialValue) {
+export default function useColorKnob(name: string, initialValue: string) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {

@@ -10,7 +10,7 @@ const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 export interface Props {
   /**
    * Renders the inspector panel in a portal with fixed position
-   * @default false
+   * @default true
    */
   usePortal?: boolean;
   /**

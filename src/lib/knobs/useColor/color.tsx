@@ -58,7 +58,7 @@ export default function Color({ name, value, onChange }: Props) {
           />
         )}
         {displayColorPicker && (
-          <Popper placement="right">
+          <Popper placement="bottom">
             {({ ref, style, placement }: any) => (
               <div
                 ref={ref}

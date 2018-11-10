@@ -2,6 +2,8 @@
 name: Theming Inspector
 menu: Inspector
 ---
+import { Playground } from "docz";
+import { Inspector, DarkTheme } from "../src/lib";
 
 ### Theming
 
@@ -33,5 +35,19 @@ const CustomTheme = {
       dividerColor: "string",
     },
   },
-}
+};
 ```
+
+#### In-built dark theme
+
+Retoggle ships with a default dark theme.
+
+#### Usage
+
+```javascript
+import { DarkTheme } from 'retoggle';
+```
+
+<Playground>
+  <Inspector theme={DarkTheme} usePortal={false}/>
+</Playground>

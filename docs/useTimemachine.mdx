@@ -14,8 +14,10 @@ Tracks the state changes of the value and allows going back in time by using the
 - `value` - A state value to track
 
 
-## Usage
-
+#### Usage
+```javascript
+import { useTimemachine } from "retoggle";
+```
 <Playground>
 {() => {
     const [state, setState] = useState("Hello");

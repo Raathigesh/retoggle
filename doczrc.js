@@ -9,8 +9,7 @@ export default {
       link: "#223f5a"
     },
     logo: {
-      src:
-        "https://raw.githubusercontent.com/smooth-code/smooth-ui/master/resources/smooth-ui-logo-horizontal.png",
+      src: "./Retoggle.png",
       width: 200
     },
     styles: {

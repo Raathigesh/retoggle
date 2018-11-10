@@ -11,8 +11,8 @@ import {
   useRangesKnob,
   useSelectKnob,
   useTimemachine,
-  useColor,
-  useObject
+  useColorKnob,
+  useObjectKnob
 } from "../lib";
 import useChartKnob from "./custom-chart-knob";
 
