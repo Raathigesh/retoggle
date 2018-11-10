@@ -1,6 +1,7 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { Slider, Rail, Handles, Tracks } from "react-compound-slider";
 import { Handle, Track } from "./parts";
+import ThemeContext from "../../inspector/theme";
 
 const sliderStyle: React.CSSProperties = {
   display: "flex",
@@ -13,8 +14,7 @@ const railStyle: React.CSSProperties = {
   width: "100%",
   height: 15,
   borderRadius: 2,
-  cursor: "pointer",
-  backgroundColor: "rgb(228, 228, 228)"
+  cursor: "pointer"
 };
 
 interface Props {
@@ -25,6 +25,11 @@ interface Props {
 }
 
 export default function CustomSlider({ min, max, value, onChange }: Props) {
+  const {
+    knob: {
+      slider: { railColor, handleColor, activeTrackColor }
+    }
+  } = useContext(ThemeContext);
   return (
     <div style={{ height: "15px", width: "100%" }}>
       <Slider
@@ -36,7 +41,12 @@ export default function CustomSlider({ min, max, value, onChange }: Props) {
         values={[value]}
       >
         <Rail>
-          {({ getRailProps }) => <div style={railStyle} {...getRailProps()} />}
+          {({ getRailProps }) => (
+            <div
+              style={{ ...railStyle, backgroundColor: railColor }}
+              {...getRailProps()}
+            />
+          )}
         </Rail>
         <Handles>
           {({ handles, getHandleProps }) => (
@@ -47,6 +57,7 @@ export default function CustomSlider({ min, max, value, onChange }: Props) {
                   handle={handle}
                   domain={[min, max]}
                   getHandleProps={getHandleProps}
+                  backgroundColor={handleColor}
                 />
               ))}
             </div>
@@ -61,6 +72,7 @@ export default function CustomSlider({ min, max, value, onChange }: Props) {
                   source={source}
                   target={target}
                   getTrackProps={getTrackProps}
+                  backgroundColor={activeTrackColor}
                 />
               ))}
             </div>

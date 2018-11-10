@@ -14,3 +14,4 @@ export {
   addKnobRenderer
 } from "./inspector/state-handler";
 export { default as KnobFrame } from "./inspector/knobs/frame";
+export { DarkTheme } from "./inspector/theme";

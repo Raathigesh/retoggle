@@ -11,8 +11,14 @@ export interface Theme {
       color: string;
       dividerColor: string;
     };
+    slider: {
+      railColor: string;
+      handleColor: string;
+      activeTrackColor: string;
+    };
   };
   log: {
+    objectViewerTheme: string;
     label: {
       color: string;
       dividerColor: string;
@@ -30,11 +36,43 @@ export const DefaultTheme: Theme = {
     label: {
       color: "#737576",
       dividerColor: "#eaeaea"
+    },
+    slider: {
+      railColor: "rgb(228, 228, 228)",
+      handleColor: "#4a27ff",
+      activeTrackColor: "wheat"
     }
   },
   log: {
+    objectViewerTheme: "rjv-default",
     label: {
       color: "#737576",
+      dividerColor: "#eaeaea"
+    }
+  }
+};
+
+export const DarkTheme: Theme = {
+  primaryColor: "#4a27ff",
+  backgroundColor: "#223f5a",
+  collapseHandle: {
+    backgroundColor: "#dfdfdf"
+  },
+  knob: {
+    label: {
+      color: "white",
+      dividerColor: "#eaeaea"
+    },
+    slider: {
+      railColor: "rgb(228, 228, 228)",
+      handleColor: "#4a27ff",
+      activeTrackColor: "wheat"
+    }
+  },
+  log: {
+    objectViewerTheme: "flat",
+    label: {
+      color: "white",
       dividerColor: "#eaeaea"
     }
   }

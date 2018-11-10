@@ -35,9 +35,9 @@ const Value = styled.div`
   overflow: auto;
 `;
 
-function getRenderer(value: any) {
+function getRenderer(value: any, theme: string) {
   if (typeof value === "object") {
-    return <ReactJson src={value} />;
+    return <ReactJson src={value} theme={theme} />;
   } else if (typeof value === "boolean") {
     return value.toString();
   }
@@ -50,10 +50,10 @@ interface Props {
 }
 
 export default function Log({ name, value }: Props) {
-  const renderer = getRenderer(value);
   const {
-    log: { label }
+    log: { label, objectViewerTheme }
   } = useContext(ThemeContext);
+  const renderer = getRenderer(value, objectViewerTheme);
   return (
     <Container dividerColor={label.dividerColor}>
       <Name color={label.color}>

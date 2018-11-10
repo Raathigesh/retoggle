@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Inspector } from "../lib";
+import { Inspector, DarkTheme } from "../lib";
 import Icon from "./icon";
 
 const Container = styled.div``;

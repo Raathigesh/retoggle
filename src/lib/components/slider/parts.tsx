@@ -12,12 +12,14 @@ interface IHandleProps {
   domain: number[];
   handle: SliderItem;
   getHandleProps: GetHandleProps;
+  backgroundColor: string;
 }
 
 export const Handle: React.SFC<IHandleProps> = ({
   domain: [min, max],
   handle: { id, value, percent },
-  getHandleProps
+  getHandleProps,
+  backgroundColor
 }) => (
   <div
     role="slider"
@@ -32,7 +34,7 @@ export const Handle: React.SFC<IHandleProps> = ({
       marginLeft: "-3px",
       height: 15,
       cursor: "pointer",
-      backgroundColor: "wheat"
+      backgroundColor
     }}
     {...getHandleProps(id)}
   />
@@ -45,19 +47,21 @@ interface ITrackProps {
   source: SliderItem;
   target: SliderItem;
   getTrackProps: GetTrackProps;
+  backgroundColor: string;
 }
 
 export const Track: React.SFC<ITrackProps> = ({
   source,
   target,
-  getTrackProps
+  getTrackProps,
+  backgroundColor
 }) => (
   <div
     style={{
       position: "absolute",
       height: 15,
       zIndex: 1,
-      backgroundColor: "rgb(74, 39, 255)",
+      backgroundColor,
       borderRadius: 3,
       cursor: "pointer",
       left: `${source.percent}%`,
