@@ -1,4 +1,3 @@
-// this is just.. i don't know the word for it...
 class StateHandler {
   public logs: any;
   public knobs: any;

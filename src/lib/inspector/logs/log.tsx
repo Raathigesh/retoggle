@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import { Info } from "react-feather";
 import Inspector, { chromeLight } from "react-inspector";
+import ReactJson from "react-json-view";
 
 const Container = styled.div`
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
+  flex-direction: column;
   padding-top: 3px;
   padding-bottom: 3px;
   border-bottom: 1px solid #eaeaea;
@@ -20,6 +22,7 @@ const Name = styled.div`
   color: #737576;
   width: 150px;
   min-width: 150px;
+  margin-bottom: 5px;
 
   span {
     margin-left: 3px;
@@ -29,13 +32,14 @@ const Name = styled.div`
 const Value = styled.div`
   display: flex;
   flex-grow: 1;
+  overflow: auto;
 `;
 
 function getRenderer(value: any) {
   if (typeof value === "object") {
     return (
-      <Inspector
-        data={value}
+      <ReactJson
+        src={value}
         theme={{ ...chromeLight, ...{ BASE_BACKGROUND_COLOR: "#f8f7f6" } }}
       />
     );

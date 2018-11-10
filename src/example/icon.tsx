@@ -10,7 +10,8 @@ import {
   useRangeKnob,
   useRangesKnob,
   useSelectKnob,
-  useTimemachine
+  useTimemachine,
+  useColor
 } from "../lib";
 import useChartKnob from "./custom-chart-knob";
 
@@ -53,11 +54,13 @@ export default function Icon() {
   });
   const [color] = useSelectKnob("Select", ["white", "wheat"], "white");
   useChartKnob("Chart", timemachineValue);
+  const [colorValue] = useColor("Color");
+  console.log(colorValue);
   return (
     <Container
       style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}
     >
-      {visibility && <Feather size={rangeKnobValue} color={color} />}
+      {visibility && <Feather size={rangeKnobValue} color={colorValue} />}
       <InputBox
         type="text"
         value={timemachineValue && timemachineValue.text}

@@ -21,9 +21,7 @@ export default function useRangeKnob(
         value,
         min,
         max,
-        onChange: (value: any) => {
-          setValue(value);
-        }
+        onChange: setValue
       });
     },
     [value]

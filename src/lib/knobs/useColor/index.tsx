@@ -1,23 +1,23 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   setKnob,
   removeKnob,
   addKnobRenderer
 } from "../../inspector/state-handler";
-import Component from "./text";
+import Component from "./color";
 
-addKnobRenderer("text", Component);
+addKnobRenderer("color", Component);
 
-export default function useTextKnob(name: string, initialValue = "") {
+export default function useColorKnob(name: string, initialValue) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
       setKnob({
         name,
-        type: "text",
+        type: "color",
         value,
         onChange: (value: string) => {
-          setValue(value);
+          setValue(value.hex);
         }
       });
     },
@@ -27,6 +27,5 @@ export default function useTextKnob(name: string, initialValue = "") {
   useEffect(() => {
     return () => removeKnob(name);
   }, []);
-
   return [value, setValue];
 }

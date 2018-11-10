@@ -1,17 +1,23 @@
 import React from "react";
-import styled from "styled-components";
 const { Input } = require("@smooth-ui/core-sc");
+import { Edit2 } from "react-feather";
 import KnobFrame from "../../inspector/knobs/frame";
 
-export default function TextComponent({ name, value, onChange }) {
+interface Props {
+  name: string;
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export default function TextComponent({ name, value, onChange }: Props) {
   return (
-    <KnobFrame label={name}>
+    <KnobFrame label={name} icon={<Edit2 size={11} />}>
       <Input
         type="text"
         width="100%"
         size="sm"
         value={value}
-        onChange={e => {
+        onChange={(e: any) => {
           onChange(e.target.value);
         }}
       />

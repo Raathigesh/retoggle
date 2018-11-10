@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
-import { setKnob, removeKnob } from "../../inspector/state-handler";
+import { useEffect } from "react";
+import { removeKnob } from "../../inspector/state-handler";
 import useRangeKnob from "../useRangeKnob";
+import { Props } from "../useRangeKnob/range";
 
-export default function useRangesKnob(name, ranges) {
+export default function useRangesKnob(
+  name: string,
+  ranges: { [name: string]: Props }
+) {
   const results = {
     values: {}
   };
@@ -14,7 +18,7 @@ export default function useRangesKnob(name, ranges) {
 
   useEffect(() => {
     return () => {
-      Object.entries(ranges).forEach(([propertyName, options]) => {
+      Object.entries(ranges).forEach(([propertyName]) => {
         removeKnob(`${name}-${propertyName}`);
       });
     };

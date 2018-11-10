@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { createPortal } from "react-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { ChevronUp, ChevronDown } from "react-feather";
 import Knobs from "./knobs";
 import Logs from "./logs";
 import { mount } from "./mount";
+import ThemeContext, { DefaultTheme } from "./theme";
 
 const GlobalReset = createGlobalStyle`* { box-sizing: border-box; }`;
 
-const Container = styled.div<{ usePortal: boolean }>`
+const Container = styled.div<{ usePortal: boolean; background: string }>`
   display: flex;
-  background-color: #f8f7f6;
+  background-color: ${props => props.background};
   flex-direction: column;
   position: ${props => (props.usePortal ? "absolute" : "relative")};
   top: 0;
@@ -43,6 +44,7 @@ export default function Inspector({
   height
 }: Props) {
   const [isCollapsed, setCollapsed] = useState(false);
+  const theme = useContext(ThemeContext);
 
   const handleExpandToggle = () => {
     localStorage.setItem("storyhooksIsCollapsed", (!isCollapsed).toString());
@@ -56,9 +58,13 @@ export default function Inspector({
   }, []);
 
   const content = (
-    <React.Fragment>
+    <ThemeContext.Provider value={DefaultTheme}>
       <GlobalReset />
-      <Container usePortal={usePortal} style={{ width, height }}>
+      <Container
+        background={theme.backgroundColor}
+        usePortal={usePortal}
+        style={{ width, height }}
+      >
         {!isCollapsed && (
           <Content>
             <Logs />
@@ -69,7 +75,7 @@ export default function Inspector({
           {isCollapsed ? <ChevronDown size={12} /> : <ChevronUp size={12} />}
         </CollapseHandle>
       </Container>
-    </React.Fragment>
+    </ThemeContext.Provider>
   );
 
   if (usePortal) {

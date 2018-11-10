@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   setKnob,
   removeKnob,
@@ -8,7 +8,11 @@ import Component from "./select";
 
 addKnobRenderer("select", Component);
 
-export default function useSelectKnob(name, options, initialValue) {
+export default function useSelectKnob(
+  name: string,
+  options: string[],
+  initialValue: string
+) {
   const [value, setValue] = useState(initialValue);
   useEffect(
     () => {
@@ -17,7 +21,7 @@ export default function useSelectKnob(name, options, initialValue) {
         type: "select",
         options,
         value,
-        onChange: value => {
+        onChange: (value: string) => {
           setValue(value);
         }
       });
