@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { ChevronUp, ChevronDown } from "react-feather";
 import Knobs from "./knobs";
 import Logs from "./logs";

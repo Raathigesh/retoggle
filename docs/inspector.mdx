@@ -1,0 +1,23 @@
+---
+name: Inspector Component
+menu: Inspector
+---
+
+import { PropsTable, Playground } from 'docz'
+import {Inspector} from '../src/lib/inspector'
+
+### Inspector
+
+The `<Inspector />` component shows all the active toggles. This can be placed anywhere in your component tree.
+
+## Props
+
+<PropsTable of={Inspector} />
+
+## Usage
+
+<Playground>
+    <Inspector usePortal={false}/>
+</Playground>
+
+ > Change `usePortal` to `true` to see the difference
