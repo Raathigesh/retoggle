@@ -60,7 +60,11 @@ export default function Color({ name, value, onChange }: Props) {
         {displayColorPicker && (
           <Popper placement="right">
             {({ ref, style, placement }: any) => (
-              <div ref={ref} style={style} data-placement={placement}>
+              <div
+                ref={ref}
+                style={{ ...style, zIndex: 999 }}
+                data-placement={placement}
+              >
                 <SketchPicker color={value} onChange={onChange} />
               </div>
             )}

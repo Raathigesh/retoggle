@@ -53,8 +53,8 @@ export default function Icon() {
     max: 250
   });
   const [color] = useSelectKnob("Select", ["white", "wheat"], "white");
-  useChartKnob("Chart", timemachineValue);
   const [colorValue] = useColor("Color");
+  useChartKnob("Chart", timemachineValue);
   console.log(colorValue);
   return (
     <Container

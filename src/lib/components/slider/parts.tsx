@@ -30,10 +30,11 @@ export const Handle: React.SFC<IHandleProps> = ({
       left: `${percent}%`,
       position: "absolute",
       zIndex: 2,
-      width: 6,
+      width: 13,
       marginLeft: "-3px",
       height: 15,
       cursor: "pointer",
+      borderRadius: "4px",
       backgroundColor
     }}
     {...getHandleProps(id)}

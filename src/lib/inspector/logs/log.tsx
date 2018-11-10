@@ -13,6 +13,10 @@ const Container = styled.div<{ dividerColor: string }>`
   padding-top: 3px;
   padding-bottom: 3px;
   border-bottom: 1px solid ${props => props.dividerColor};
+
+  .key-modal-request {
+    position: fixed !important;
+  }
 `;
 
 const Name = styled.div<{ color: string }>`
@@ -37,7 +41,15 @@ const Value = styled.div`
 
 function getRenderer(value: any, theme: string) {
   if (typeof value === "object") {
-    return <ReactJson src={value} theme={theme} />;
+    return (
+      <ReactJson
+        src={value}
+        theme={theme}
+        onEdit={() => {}}
+        onAdd={() => {}}
+        onDelete={() => {}}
+      />
+    );
   } else if (typeof value === "boolean") {
     return value.toString();
   }
