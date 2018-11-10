@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { Info } from "react-feather";
-import Inspector, { chromeLight } from "react-inspector";
 import ReactJson from "react-json-view";
+import ThemeContext from "../theme";
 
-const Container = styled.div`
+const Container = styled.div<{ dividerColor: string }>`
   font-size: 12px;
   display: flex;
   justify-content: space-between;
@@ -12,14 +12,14 @@ const Container = styled.div`
   flex-direction: column;
   padding-top: 3px;
   padding-bottom: 3px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid ${props => props.dividerColor};
 `;
 
-const Name = styled.div`
+const Name = styled.div<{ color: string }>`
   display: flex;
   align-items: center;
   padding-right: 10px;
-  color: #737576;
+  color: ${props => props.color};
   width: 150px;
   min-width: 150px;
   margin-bottom: 5px;
@@ -37,12 +37,7 @@ const Value = styled.div`
 
 function getRenderer(value: any) {
   if (typeof value === "object") {
-    return (
-      <ReactJson
-        src={value}
-        theme={{ ...chromeLight, ...{ BASE_BACKGROUND_COLOR: "#f8f7f6" } }}
-      />
-    );
+    return <ReactJson src={value} />;
   } else if (typeof value === "boolean") {
     return value.toString();
   }
@@ -56,10 +51,12 @@ interface Props {
 
 export default function Log({ name, value }: Props) {
   const renderer = getRenderer(value);
-
+  const {
+    log: { label }
+  } = useContext(ThemeContext);
   return (
-    <Container>
-      <Name>
+    <Container dividerColor={label.dividerColor}>
+      <Name color={label.color}>
         <Info size={11} />
         <span>{name}</span>
       </Name>

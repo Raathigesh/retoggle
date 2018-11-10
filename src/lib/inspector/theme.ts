@@ -6,6 +6,18 @@ export interface Theme {
   collapseHandle: {
     backgroundColor: string;
   };
+  knob: {
+    label: {
+      color: string;
+      dividerColor: string;
+    };
+  };
+  log: {
+    label: {
+      color: string;
+      dividerColor: string;
+    };
+  };
 }
 
 export const DefaultTheme: Theme = {
@@ -13,6 +25,18 @@ export const DefaultTheme: Theme = {
   backgroundColor: "#f8f7f6",
   collapseHandle: {
     backgroundColor: "#dfdfdf"
+  },
+  knob: {
+    label: {
+      color: "#737576",
+      dividerColor: "#eaeaea"
+    }
+  },
+  log: {
+    label: {
+      color: "#737576",
+      dividerColor: "#eaeaea"
+    }
   }
 };
 
