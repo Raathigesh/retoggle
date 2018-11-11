@@ -6,25 +6,19 @@
 
 Retoggle is a dev utility for your demos, presentations and debugging use-cases inspired by [ideas from Dan Abramov](https://twitter.com/dan_abramov/status/1058834904207761409).
 
-#### 📚 [Docs areavailable here.](https://storyhooks.debuggable.io)
+Avilable knobs
 
-- #### 📝 `useLog()` - Keeps track of a variable value
+- 📝 `useLog()` - Keeps track of a variable value
+- 🅰 `useTextKnob()` - Shows a text box
+- 1️⃣ `useNumberKnob()` - Shows a number box
+- 🎚 `useRangeKnob()` - Shows a slider
+- 🎛 `useRangesKnob()` - Shows multiple sliders
+- 🎏 `useSelectKnob()` - Shows a select box
+- ⚒ `useObjectKnob()` - Shows an object editor
+- 🎨 `useColorKnob()` - Shows a color picker
+- ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
 
-- #### 🅰 `useTextKnob()` - Shows a text box
-
-- #### 1️⃣ `useNumberKnob()` - Shows a number box
-
-- #### 🎚 `useRangeKnob()` - Shows a slider
-
-- #### 🎛 `useRangesKnob()` - Shows multiple sliders
-
-- #### 🎏 `useSelectKnob()` - Shows a select box
-
-- #### ⚒ `useObjectKnob()` - Shows an object editor
-
-- #### 🎨 `useColorKnob()` - Shows a color picker
-
-- #### ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
+#### 📚 [API Docs with live preview available here.](https://storyhooks.debuggable.io)
 
 ## Contribute
 
