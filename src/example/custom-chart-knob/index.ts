@@ -4,7 +4,7 @@ import Component from "./component";
 
 addKnobRenderer("chart", Component);
 
-export default function useChartKnob(name, value) {
+export default function useChartKnob(name: string, value: any) {
   const [data, setData] = useState([]);
 
   useEffect(

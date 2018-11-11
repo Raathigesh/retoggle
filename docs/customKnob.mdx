@@ -1,0 +1,112 @@
+---
+name: Writting a Custom Knob
+menu: Knobs
+---
+import {useState} from "react";
+import { Playground } from "docz";
+import useChartKnob from "../example/custom-chart-knob";
+
+### Writting a custom Knob
+Retoggle allows you to add your own knows to the Inspector with a simple API.
+
+- A component to render in the inspector panel
+- A custom hook to manage state
+
+### The API
+
+```javascript
+import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
+```
+
+- `addKnobRenderer(type, Component)` - Registers a knob renderer with the store.
+    - `type`: Knob type. This is a string. Should be unqiue.
+    - `Component`: The component constructor.
+
+- `setKnob(props)` - You would call this method to update your knob. The following are required props.
+    - `name`: The name of your knob.
+    - `type`: Type of the knob.
+
+- `removeKnob(name)` - You would call this method remove your knob from the inspector.
+    - `name`: The name of your knob.
+
+
+### A walkthough of the custom knob sample
+
+This example knob implementation can be found in [src/example/custom-chart-knob](https://github.com/Raathigesh/storyhooks/blob/master/src/example/custom-chart-knob/index.ts).
+
+#### The Component of the Knob
+The props of this components are passed by your from your custom hook
+
+```javascript
+import React from "react";
+import styled from "styled-components";
+import { Activity } from "react-feather";
+import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
+import { KnobFrame } from "retoggle";
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 5px;
+
+  svg {
+    width: 100%;
+    height: 50px;
+  }
+`;
+
+export default function Chart({ data }) {
+  return (
+    <KnobFrame
+      label="This is a custom knob"
+      direction="column"
+      icon={<Activity size={11} />}
+    >
+      <Container>
+        <Sparklines data={data} limit={20}>
+          <SparklinesLine color="#1c8cdc" />
+          <SparklinesSpots />
+        </Sparklines>
+      </Container>
+    </KnobFrame>
+  );
+}
+
+```
+
+#### The custom hook
+```javascript
+import { useState, useEffect } from "react";
+import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
+import Component from "./component";
+
+const KnobType = "chart";
+addKnobRenderer(KnobType, Component);
+
+export default function useChartKnob(name: string, value: any) {
+  const [data, setData] = useState([]);
+
+  useEffect(
+    () => {
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      setData([...data, randomNumber]);
+
+      setKnob({
+        name,
+        type: KnobType,
+        data
+      });
+    },
+    [value]
+  );
+
+  useEffect(() => {
+    return () => removeKnob(name);
+  }, []);
+}
+
+```
+
+
+
+

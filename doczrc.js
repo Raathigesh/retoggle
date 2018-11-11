@@ -10,7 +10,7 @@ export default {
     },
     logo: {
       src:
-        "https://raw.githubusercontent.com/Raathigesh/storyhooks/master/docs/Retoggle.png",
+        "https://raw.githubusercontent.com/Raathigesh/storyhooks/master/docs/Logo.png",
       width: 200
     },
     styles: {

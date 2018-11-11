@@ -1,6 +1,17 @@
-<div  align="center">
-<img src="./docs/Retoggle.png" />
-</div>
+---
+name: Getting started
+route: /
+---
+import {Playground} from 'docz';
+import image from './Retoggle.png'
+import App from '../src/example/app.tsx';
+
+## Retoggle
+<Playground>
+{() => {
+  return <App />
+}}
+</Playground>
 
 [![Build Status](https://travis-ci.org/Raathigesh/storyhooks.svg?branch=master)](https://travis-ci.org/Raathigesh/storyhooks)
 
@@ -11,25 +22,9 @@ Retoggle is a dev utility for your demos, presentations and debugging use-cases 
 - 🎨 Themeable components
 - 🎁 Extensible. Write your custom toggles.
 
-### Show me ths code
+### Take it for a spin
 
-```javascript
-import React, { useState } from "react";
-import { Inspector, useLog } from "retoggle";
 
-export default function Demo() {
-  const [state, setState] = useState({ value: 5 });
-
-  // logs your state to inspector
-  useLog("My state", state);
-
-  return (
-    <div>
-      <Inspector />
-    </div>
-  );
-}
-```
 
 ### Avilable knobs
 
@@ -45,6 +40,8 @@ export default function Demo() {
 - ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
 
 #### 📚 [API Docs with live preview available here.](https://storyhooks.debuggable.io)
+
+
 
 ## Contribute
 
