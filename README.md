@@ -11,7 +11,7 @@ Retoggle is a dev utility for your demos, presentations and debugging use-cases 
 - 🎨 Themeable components
 - 🎁 Extensible. Write your custom toggles.
 
-### Show me ths code
+### Show me the code
 
 ```javascript
 import React, { useState } from "react";
