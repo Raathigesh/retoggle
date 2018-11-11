@@ -6,11 +6,17 @@
 
 Retoggle is a dev utility for your demos, presentations and debugging use-cases inspired by [ideas from Dan Abramov](https://twitter.com/dan_abramov/status/1058834904207761409).
 
-Avilable knobs
+- 🎉 A wide range of toggles
+- 💡 Frictionless integration
+- 🎨 Themeable components
+- 🎁 Extensible. Write your custom toggles.
+
+### Avilable knobs
 
 - 📝 `useLog()` - Keeps track of a variable value
 - 🅰 `useTextKnob()` - Shows a text box
 - 1️⃣ `useNumberKnob()` - Shows a number box
+- ✅️ `useBooleanKnob()` - Shows a check box
 - 🎚 `useRangeKnob()` - Shows a slider
 - 🎛 `useRangesKnob()` - Shows multiple sliders
 - 🎏 `useSelectKnob()` - Shows a select box

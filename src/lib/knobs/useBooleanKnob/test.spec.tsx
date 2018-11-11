@@ -6,7 +6,7 @@ import {
   waitForElement,
   getByTestId
 } from "react-testing-library";
-import Inspector from "../../inspector";
+import { Inspector } from "../../";
 import useBooleanKnob from "./index";
 
 describe("Boolean Knob", () => {
