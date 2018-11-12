@@ -6,7 +6,7 @@ export { default as useNumberKnob } from "./knobs/useNumberKnob";
 export { default as useRangeKnob } from "./knobs/useRangeKnob";
 export { default as useRangesKnob } from "./knobs/useRangesKnob";
 export { default as useSelectKnob } from "./knobs/useSelectKnob";
-export { default as useTimemachine } from "./knobs/useTimemachine";
+export { default as useTimeMachine } from "./knobs/useTimemachine";
 export { default as useColorKnob } from "./knobs/useColor";
 export { default as useObjectKnob } from "./knobs/useObject";
 export {
@@ -14,5 +14,5 @@ export {
   removeKnob,
   addKnobRenderer
 } from "./inspector/state-handler";
-export { default as KnobFrame } from "./inspector/knobs/frame";
+export { KnobFrame } from "./inspector/knobs/frame";
 export { DarkTheme } from "./inspector/theme";

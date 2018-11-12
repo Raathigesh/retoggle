@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Box } from "react-feather";
 import ReactJson from "react-json-view";
 import styled from "styled-components";
-import KnobFrame from "../../inspector/knobs/frame";
+import { KnobFrame } from "../../inspector/knobs/frame";
 import ThemeContext from "../../inspector/theme";
 
 const Container = styled.div`

@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from "react";
+import React, { ReactElement, useContext, SFC } from "react";
 import styled from "styled-components";
 import ThemeContext from "../theme";
 
@@ -38,21 +38,37 @@ const Value = styled.div`
   flex-grow: 1;
 `;
 
-interface Props {
+export interface Props {
+  /**
+   * React element for icon
+   */
   icon: React.ReactElement<any>;
+  /**
+   * Label for the frame
+   */
   label: string;
+  /**
+   * Sets the flex direction of the frame. Valid values are "column" or "row"
+   */
   direction?: "column" | "row";
+  /**
+   * The content of the frame. Your knob's component.
+   */
   children: ReactElement<any>;
+
+  /**
+   * Style override for the frame container div.
+   */
   style?: any;
 }
 
-export default function KnobFrame({
+export const KnobFrame: SFC<Props> = ({
   icon,
   label,
   children,
   style,
   direction = "row"
-}: Props) {
+}) => {
   const {
     knob: { label: themeLabel }
   } = useContext(ThemeContext);
@@ -70,4 +86,4 @@ export default function KnobFrame({
       <Value>{children}</Value>
     </Container>
   );
-}
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import { Hash } from "react-feather";
 const { Input } = require("@smooth-ui/core-sc");
-import KnobFrame from "../../inspector/knobs/frame";
+import { KnobFrame } from "../../inspector/knobs/frame";
 
 interface Props {
   name: string;

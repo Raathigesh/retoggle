@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Feather } from "react-feather";
 const { SketchPicker } = require("react-color");
 const { Manager, Reference, Popper } = require("react-popper");
-import KnobFrame from "../../inspector/knobs/frame";
+import { KnobFrame } from "../../inspector/knobs/frame";
 
 interface Props {
   name: string;

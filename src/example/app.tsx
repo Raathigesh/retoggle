@@ -8,7 +8,7 @@ import {
   useNumberKnob,
   useRangeKnob,
   useSelectKnob,
-  useTimemachine,
+  useTimeMachine,
   useColorKnob,
   useObjectKnob
 } from "../lib";
@@ -50,8 +50,8 @@ export default function Icon() {
   );
   const [colorValue] = useColorKnob("Color", "wheat");
   const [obj, setObj] = useObjectKnob("Object", {});
-  const timemachineValue = useTimemachine("Textbox timemachine", colorValue);
-  useChartKnob("Chart", timemachineValue);
+  const timeMachineValue = useTimeMachine("Textbox timemachine", colorValue);
+  useChartKnob("Chart", timeMachineValue);
 
   return (
     <Container
@@ -59,7 +59,7 @@ export default function Icon() {
     >
       <Inspector />
       {visibility && (
-        <Ghost size={rangeKnobValue} mood={mood} color={timemachineValue} />
+        <Ghost size={rangeKnobValue} mood={mood} color={timeMachineValue} />
       )}
     </Container>
   );

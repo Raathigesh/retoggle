@@ -1,6 +1,6 @@
 import React from "react";
 import { Sliders } from "react-feather";
-import KnobFrame from "../../inspector/knobs/frame";
+import { KnobFrame } from "../../inspector/knobs/frame";
 import Slider from "../../components/slider";
 
 export interface Props {

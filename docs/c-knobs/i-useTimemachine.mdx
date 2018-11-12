@@ -1,13 +1,14 @@
 ---
-name: useTimemachine
+name: useTimeMachine
 menu: Knobs
+route: /use-time-machine-knob
 ---
 
 import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useTimemachine } from "../../src/lib";
+import { Inspector, useTimeMachine } from "../../src/lib";
 
-### useTimemachine(label, value)
+### useTimeMachine(label, value)
 
 Tracks the state changes of the value and allows going back in time by using the slider.
 
@@ -17,13 +18,13 @@ Tracks the state changes of the value and allows going back in time by using the
 #### Usage
 
 ```javascript
-import { useTimemachine } from "retoggle";
+import { useTimeMachine } from "retoggle";
 ```
 
 <Playground>
 {() => {
     const [state, setState] = useState("Hello");
-    const timeTravelledState = useTimemachine("State timemachine", state);
+    const timeTravelledState = useTimeMachine("State timemachine", state);
 
     return (
         <React.Fragment>

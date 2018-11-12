@@ -3,7 +3,7 @@ import { useContext } from "react";
 const { Checkbox } = require("@smooth-ui/core-sc");
 import { ToggleLeft } from "react-feather";
 import styled from "styled-components";
-import KnobFrame from "../../inspector/knobs/frame";
+import { KnobFrame } from "../../inspector/knobs/frame";
 import ThemeContext from "../../inspector/theme";
 
 const SyledCheckBox = styled(Checkbox)<{ background: string }>`
