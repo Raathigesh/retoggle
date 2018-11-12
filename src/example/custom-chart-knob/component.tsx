@@ -15,7 +15,7 @@ const Container = styled.div`
   }
 `;
 
-export default function Chart({ data }) {
+export default function Chart({ data }: any) {
   console.log("data", data);
   return (
     <KnobFrame

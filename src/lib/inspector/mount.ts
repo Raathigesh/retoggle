@@ -1,5 +1,5 @@
 export function mount() {
-  const id = "storyhooks-mount-root";
+  const id = "retoggle-mount-root";
   let inspectorRoot = document.getElementById(id);
 
   if (inspectorRoot) {

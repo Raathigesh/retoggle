@@ -6,13 +6,13 @@ import {
   removeKnob,
   addKnobRenderer
 } from "../../inspector/state-handler";
-import Component from "./timemachine";
+import Component from "./timeMachine";
 
 addKnobRenderer("timemachine", Component);
 
-export default function useTimeMachine(name, currentState) {
+export default function useTimeMachine(name: string, currentState: any) {
   const [machineState, dispatch] = useReducer(
-    (machineState, action) => {
+    (machineState: any, action: any) => {
       switch (action.type) {
         case "next":
           return {
@@ -47,7 +47,7 @@ export default function useTimeMachine(name, currentState) {
         min: 0,
         max: history.length - 1,
         value: version,
-        onChange(newVersion) {
+        onChange(newVersion: any) {
           dispatch({
             type: "move",
             version: newVersion

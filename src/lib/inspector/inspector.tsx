@@ -39,6 +39,8 @@ interface Props {
   usePortal?: boolean;
 }
 
+const LocalStorageCollapseHandlerKey = "RetoggleIsCollapsed";
+
 export default function Inspector({
   width = "300px",
   height,
@@ -48,13 +50,16 @@ export default function Inspector({
   const themeContext = useContext(ThemeContext);
 
   const handleExpandToggle = () => {
-    localStorage.setItem("storyhooksIsCollapsed", (!isCollapsed).toString());
+    localStorage.setItem(
+      LocalStorageCollapseHandlerKey,
+      (!isCollapsed).toString()
+    );
     setCollapsed(!isCollapsed);
   };
 
   useEffect(() => {
     const isCollapsedLocalStorage =
-      localStorage.getItem("storyhooksIsCollapsed") === "true";
+      localStorage.getItem(LocalStorageCollapseHandlerKey) === "true";
     setCollapsed(isCollapsedLocalStorage);
   }, []);
 

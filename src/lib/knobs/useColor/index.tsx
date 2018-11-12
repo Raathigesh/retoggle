@@ -16,7 +16,7 @@ export default function useColorKnob(name: string, initialValue: string) {
         name,
         type: "color",
         value,
-        onChange: (value: string) => {
+        onChange: (value: any) => {
           setValue(value.hex);
         }
       });

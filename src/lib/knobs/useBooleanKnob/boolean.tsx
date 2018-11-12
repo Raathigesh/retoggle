@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { KnobFrame } from "../../inspector/knobs/frame";
 import ThemeContext from "../../inspector/theme";
 
-const SyledCheckBox = styled(Checkbox)<{ background: string }>`
+const StyledCheckBox = styled(Checkbox)<{ background: string }>`
   input:checked + .sui-checkbox-content {
     background-color: ${props => props.background};
     border-color: transparent;
@@ -23,9 +23,8 @@ export default function ToggleComponent({ name, value, onChange }: Props) {
   const theme = useContext(ThemeContext);
   return (
     <KnobFrame label={name} icon={<ToggleLeft size={11} />}>
-      <SyledCheckBox
+      <StyledCheckBox
         size="sm"
-        data-testid={name}
         defaultChecked={value}
         background={theme.primaryColor}
         ml={-3.75}
