@@ -59,16 +59,16 @@ export default function Demo() {
 
 ### Contribute
 
-#### Preparing dev environment
+Preparing dev environment
 
 - `yarn install` to install dev dependencies
 
-#### Running and building the library
+Running and building the library
 
 - `yarn start` will start the dev server and expose the sample app
 - `yarn build` will output the build artifact to `./lib` folder
 
-#### Docs
+Docs
 
 - `docz:dev` will start the docz developement server
 - `docz:build` will build the docs
@@ -76,3 +76,16 @@ export default function Demo() {
 ### License
 
 MIT
+
+### Contributors
+
+  <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+| [<img src="https://avatars2.githubusercontent.com/u/3108160?s=460&v=4" width="100px;"/><br /><sub>Raathigeshan</sub>](https://twitter.com/Raathigesh)<br />💻 📖 💬 👀 🤔 🎨 |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
+Contributions of any kind are welcome!
