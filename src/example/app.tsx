@@ -15,6 +15,14 @@ import {
 import useChartKnob from "./custom-chart-knob";
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 90vh;
+`;
+
+const Tile = styled.div`
   background-color: #3356d0;
   flex-direction: column;
   display: flex;
@@ -54,13 +62,13 @@ export default function Icon() {
   useChartKnob("Chart", timeMachineValue);
 
   return (
-    <Container
-      style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}
-    >
-      <Inspector />
-      {visibility && (
-        <Ghost size={rangeKnobValue} mood={mood} color={timeMachineValue} />
-      )}
+    <Container>
+      <Tile style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}>
+        <Inspector />
+        {visibility && (
+          <Ghost size={rangeKnobValue} mood={mood} color={timeMachineValue} />
+        )}
+      </Tile>
     </Container>
   );
 }
