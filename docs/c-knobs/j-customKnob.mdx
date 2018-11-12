@@ -1,5 +1,5 @@
 ---
-name: Writting a Custom Knob
+name: Your Custom Knob
 menu: Knobs
 route: /writting-your-own-custom-knob
 ---
@@ -9,7 +9,7 @@ import { Playground, PropsTable } from "docz";
 import { KnobFrame } from "../../src/lib";
 import useChartKnob from "../../example/custom-chart-knob";
 
-### Writting a custom Knob
+## Writting a custom Knob
 
 Retoggle allows you to add your own knobs to the Inspector.
 
@@ -18,7 +18,7 @@ A custom knob comprises of two parts
 - A component to render in the inspector panel
 - A custom hook to manage state
 
-### The API
+## The API
 
 ```javascript
 import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
@@ -54,11 +54,11 @@ setKnob({
 removeKnob("Custom knob sample")
 ```
 
-### A sample implementation
+## A sample implementation
 
 This example knob implementation can be found in [src/example/custom-chart-knob](https://github.com/Raathigesh/storyhooks/blob/master/src/example/custom-chart-knob/index.ts).
 
-#### The Component of the Knob
+### The Component of the Knob
 
 This component will receive all the props passed to `setKnob()`. Nothing special here. An ordinary react component.
 
@@ -98,7 +98,7 @@ export default function Chart({ data }) {
 }
 ```
 
-#### The custom knob hook
+### The custom knob hook
 
 ```javascript
 import { useState, useEffect } from "react";
