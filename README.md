@@ -1,11 +1,14 @@
 <div  align="center">
 <img src="./docs/Retoggle.png" />
-
+<br />
+<br />
 <img src="https://img.shields.io/travis/Raathigesh/retoggle.svg?style=flat-square" />
 <img src="https://img.shields.io/github/license/Raathigesh/retoggle.svg?style=flat-square" />
 <img src="https://img.shields.io/npm/v/retoggle.svg?style=flat-square" />
 </div>
 
+<br />
+<br />
 Retoggle is a collection of React hooks which provides UI toggles to manipulate your component state from outside. Like [Storybook Knobs](https://www.npmjs.com/package/@storybook/addon-knobs) but with React hooks and also without Storybook. This library is inspired by [ideas from Dan Abramov](https://twitter.com/dan_abramov/status/1058834904207761409).
 
 - 🎉 A wide range of toggles
