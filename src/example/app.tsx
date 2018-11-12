@@ -58,7 +58,7 @@ export default function Icon() {
   );
   const [colorValue] = useColorKnob("Color", "wheat");
   const [obj, setObj] = useObjectKnob("Object", {});
-  const timeMachineValue = useTimeMachine("Textbox timemachine", colorValue);
+  const timeMachineValue = useTimeMachine("Color timemachine", colorValue);
   useChartKnob("Chart", timeMachineValue);
 
   return (
