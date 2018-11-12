@@ -31,8 +31,8 @@ export const DefaultTheme: Theme = {
   primaryColor: "#223f5a",
   backgroundColor: "#f8f7f6",
   collapseHandle: {
-    backgroundColor: "#14518e",
-    color: "black"
+    backgroundColor: "#e2e2e2",
+    color: "gray"
   },
   knob: {
     label: {
