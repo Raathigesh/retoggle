@@ -50,22 +50,22 @@ export default function Demo() {
 
 #### 📚 [API Docs with live preview available here.](https://storyhooks.debuggable.io)
 
-## Contribute
+### Contribute
 
-### Preparing dev environment
+#### Preparing dev environment
 
 - `yarn install` to install dev dependencies
 
-### Running and building the library
+#### Running and building the library
 
 - `yarn start` will start the dev server and expose the sample app
 - `yarn build` will output the build artifact to `./lib` folder
 
-### Docs
+#### Docs
 
 - `docz:dev` will start the docz developement server
 - `docz:build` will build the docs
 
-## License
+### License
 
 MIT
