@@ -4,12 +4,14 @@
 
 [![Build Status](https://travis-ci.org/Raathigesh/storyhooks.svg?branch=master)](https://travis-ci.org/Raathigesh/storyhooks)
 
-Retoggle is a dev utility for your demos, presentations and debugging use-cases inspired by [ideas from Dan Abramov](https://twitter.com/dan_abramov/status/1058834904207761409).
+Retoggle is a collection of React hooks which provides UI toggles to manipulate your component state from outside. Like [Storybook Knobs](https://www.npmjs.com/package/@storybook/addon-knobs) but with React hooks and also without Storybook. This library is inspired by [ideas from Dan Abramov](https://twitter.com/dan_abramov/status/1058834904207761409).
 
 - 🎉 A wide range of toggles
 - 💡 Frictionless integration
 - 🎨 Themeable components
 - 🎁 Extensible. Write your custom toggles.
+
+🚨 You need React v16.7.0 to use Retoggle since it relies on Hooks. Also Hooks are a new feature proposal that lets you use state and other React features without writing a class. They’re currently in React v16.7.0-alpha and [being discussed in an open RFC.](https://github.com/reactjs/rfcs/pull/68)
 
 ### Show me the code
 
