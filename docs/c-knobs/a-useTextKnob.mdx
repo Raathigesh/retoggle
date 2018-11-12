@@ -1,10 +1,12 @@
 ---
 name: useTextKnob
 menu: Knobs
+route: /knobs/text
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useTextKnob } from "../src/lib";
+import { Inspector, useTextKnob } from "../../src/lib";
 
 ### useTextKnob(label, [initialValue])
 
@@ -13,11 +15,12 @@ Displays a text box in the inspector panel and provides you the text and a metho
 - `label` - A label for the text box
 - `initialValue` - the Initial value of the text box. Defaults to `""`;
 
-
 #### Usage
+
 ```javascript
 import { useTextKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [text, setText] = useTextKnob("Name", "Hello World")
@@ -28,5 +31,7 @@ import { useTextKnob } from "retoggle";
             {text}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

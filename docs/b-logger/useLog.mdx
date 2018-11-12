@@ -2,9 +2,10 @@
 name: useLog
 menu: Logger
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useLog } from "../src/lib";
+import { Inspector, useLog } from "../../src/lib";
 
 ### useLog(label, value)
 
@@ -13,11 +14,12 @@ Displays the value in the inspector panel
 - `label` - A label for the log
 - `value` - The value that should be displayed
 
-
 #### Usage
+
 ```javascript
 import { useLog } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [state, setState] = useState({value: 5});
@@ -29,5 +31,7 @@ import { useLog } from "retoggle";
             {state.value}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

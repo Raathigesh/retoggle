@@ -17,11 +17,16 @@ const Container = styled.div<{ usePortal: boolean; background: string }>`
   overflow: auto;
 `;
 
-const CollapseHandle = styled.div`
+const CollapseHandle = styled.div<{ backgroundColor: string; color: string }>`
   display: flex;
   justify-content: center;
-  background-color: #dfdfdf;
+  background-color: ${props => props.backgroundColor};
+  color: ${props => props.color};
   cursor: pointer;
+
+  svg {
+    color: ${props => props.color};
+  }
 `;
 
 const Content = styled.div`
@@ -65,7 +70,12 @@ export default function Inspector({
           <Knobs />
         </Content>
       )}
-      <CollapseHandle title="Collapse" onClick={handleExpandToggle}>
+      <CollapseHandle
+        title="Collapse"
+        onClick={handleExpandToggle}
+        color={themeContext.collapseHandle.color}
+        backgroundColor={themeContext.collapseHandle.backgroundColor}
+      >
         {isCollapsed ? <ChevronDown size={12} /> : <ChevronUp size={12} />}
       </CollapseHandle>
     </Container>

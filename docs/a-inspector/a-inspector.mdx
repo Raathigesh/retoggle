@@ -1,10 +1,11 @@
 ---
 name: Inspector Component
 menu: Inspector
+order: 1
 ---
 
-import { PropsTable, Playground } from 'docz'
-import {Inspector} from '../src/lib/inspector'
+import { PropsTable, Playground } from "docz";
+import { Inspector } from "../../src/lib/inspector";
 
 ### Inspector
 
@@ -17,12 +18,11 @@ import {Inspector} from 'retoggle';
 ```
 
 <Playground>
-    <Inspector usePortal={false}/>
+  <Inspector usePortal={false} />
 </Playground>
 
- > Change `usePortal` to `true` to see the difference
+> Change `usePortal` to `true` to see the difference
 
 #### Props
 
 <PropsTable of={Inspector} />
-

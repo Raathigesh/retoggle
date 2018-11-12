@@ -6,7 +6,7 @@ export default {
     repository: "https://github.com/smooth-code/smooth-ui",
     colors: {
       primary: "#223f5a",
-      link: "#223f5a"
+      link: "#1c25cc"
     },
     logo: {
       src:
@@ -16,6 +16,9 @@ export default {
     styles: {
       h1: {
         fontSize: 100
+      },
+      link: {
+        color: "blue"
       }
     }
   }

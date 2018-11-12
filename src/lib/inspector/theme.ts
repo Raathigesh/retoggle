@@ -5,6 +5,7 @@ export interface Theme {
   backgroundColor: string;
   collapseHandle: {
     backgroundColor: string;
+    color: string;
   };
   knob: {
     label: {
@@ -30,7 +31,8 @@ export const DefaultTheme: Theme = {
   primaryColor: "#223f5a",
   backgroundColor: "#f8f7f6",
   collapseHandle: {
-    backgroundColor: "#dfdfdf"
+    backgroundColor: "#14518e",
+    color: "black"
   },
   knob: {
     label: {
@@ -56,7 +58,8 @@ export const DarkTheme: Theme = {
   primaryColor: "#4a27ff",
   backgroundColor: "#223f5a",
   collapseHandle: {
-    backgroundColor: "#dfdfdf"
+    backgroundColor: "#728ea7",
+    color: "white"
   },
   knob: {
     label: {

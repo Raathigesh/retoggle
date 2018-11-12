@@ -1,10 +1,12 @@
 ---
 name: useRangeKnob
 menu: Knobs
+route: /knobs/range
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useRangeKnob } from "../src/lib";
+import { Inspector, useRangeKnob } from "../../src/lib";
 
 ### useRangeKnob(label, [{initialValue, mix, max}])
 
@@ -15,11 +17,12 @@ Displays a slider in inspector panel and provides you the number and a method to
 - `min` - Minimum value of the slider. Defaults to `0`.
 - `max` - Maximum value of the slider. Defaults to `0`.
 
-
 #### Usage
+
 ```javascript
 import { useRangeKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [range, setRance] = useRangeKnob("Range", {
@@ -34,5 +37,7 @@ import { useRangeKnob } from "retoggle";
             {range}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

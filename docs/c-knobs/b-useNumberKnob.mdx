@@ -1,10 +1,12 @@
 ---
 name: useNumberKnob
 menu: Knobs
+route: /knobs/number
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useNumberKnob } from "../src/lib";
+import { Inspector, useNumberKnob } from "../../src/lib";
 
 ### useNumberKnob(label, [initialValue])
 
@@ -13,11 +15,12 @@ Displays a number box in the inspector panel and provides you the number and a m
 - `label` - A label for the number box
 - `initialValue` - the Initial value of the number box. Defaults to `0`.
 
-
 #### Usage
+
 ```javascript
 import { useNumberKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [number, setNumber] = useNumberKnob("Number", 10);
@@ -28,5 +31,7 @@ import { useNumberKnob } from "retoggle";
             {number}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

@@ -2,9 +2,10 @@
 name: useObjectKnob
 menu: Knobs
 ---
-import {useState} from "react";
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useObjectKnob } from "../src/lib";
+import { Inspector, useObjectKnob } from "../../src/lib";
 
 ### useObjectKnob(label, object)
 
@@ -13,11 +14,12 @@ A color picker which let you pic a color
 - `label` - A label for the color picker
 - `value` - A color (string or hex value) as initial value
 
-
 #### Usage
+
 ```javascript
 import { useObjectKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [obj, setColor] = useObjectKnob("Color", {});
@@ -28,5 +30,7 @@ import { useObjectKnob } from "retoggle";
             {JSON.stringify(obj)}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

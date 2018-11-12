@@ -1,10 +1,12 @@
 ---
 name: useBooleanKnob
 menu: Knobs
+route: /knobs/boolean
 ---
-import {useState} from "react";
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useBooleanKnob } from "../src/lib";
+import { Inspector, useBooleanKnob } from "../../src/lib";
 
 ### useBooleanKnob(label, value)
 
@@ -13,11 +15,12 @@ A color picker which let you pic a color
 - `label` - A label for the color picker
 - `value` - A boolean value as initial value
 
-
 #### Usage
+
 ```javascript
 import { useBooleanKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
     const [value, setValue] = useBooleanKnob("Boolean", true);
@@ -28,5 +31,7 @@ import { useBooleanKnob } from "retoggle";
             {value.toString()}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

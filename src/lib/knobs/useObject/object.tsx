@@ -6,6 +6,7 @@ import KnobFrame from "../../inspector/knobs/frame";
 import ThemeContext from "../../inspector/theme";
 
 const Container = styled.div`
+  font-size: 12px;
   margin-top: 5px;
   .key-modal-request {
     position: fixed !important;

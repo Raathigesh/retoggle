@@ -2,12 +2,16 @@
 name: Writting a Custom Knob
 menu: Knobs
 ---
-import {useState} from "react";
+
+import { useState } from "react";
 import { Playground } from "docz";
-import useChartKnob from "../example/custom-chart-knob";
+import useChartKnob from "../../example/custom-chart-knob";
 
 ### Writting a custom Knob
-Retoggle allows you to add your own knows to the Inspector with a simple API.
+
+Retoggle allows you to add your own knobs to the Inspector with a simple API.
+
+A custom knob comprises of two parts
 
 - A component to render in the inspector panel
 - A custom hook to manage state
@@ -18,23 +22,25 @@ Retoggle allows you to add your own knows to the Inspector with a simple API.
 import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
 ```
 
-- `addKnobRenderer(type, Component)` - Registers a knob renderer with the store.
-    - `type`: Knob type. This is a string. Should be unqiue.
-    - `Component`: The component constructor.
+- `addKnobRenderer(type, Component)` - Registers a knob renderer component with the store.
+
+  - `type`: Knob type. This is a string. Should be unqiue across knobs.
+  - `Component`: The component constructor.
 
 - `setKnob(props)` - You would call this method to update your knob. The following are required props.
-    - `name`: The name of your knob.
-    - `type`: Type of the knob.
+
+  - `name`: The name of your knob.
+  - `type`: Type of the knob.
 
 - `removeKnob(name)` - You would call this method remove your knob from the inspector.
-    - `name`: The name of your knob.
+  - `name`: The name of your knob.
 
-
-### A walkthough of the custom knob sample
+### A walkthough of the custom knob example
 
 This example knob implementation can be found in [src/example/custom-chart-knob](https://github.com/Raathigesh/storyhooks/blob/master/src/example/custom-chart-knob/index.ts).
 
 #### The Component of the Knob
+
 The props of this components are passed by your from your custom hook
 
 ```javascript
@@ -71,10 +77,10 @@ export default function Chart({ data }) {
     </KnobFrame>
   );
 }
-
 ```
 
-#### The custom hook
+#### The custom knob hook
+
 ```javascript
 import { useState, useEffect } from "react";
 import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
@@ -104,9 +110,4 @@ export default function useChartKnob(name: string, value: any) {
     return () => removeKnob(name);
   }, []);
 }
-
 ```
-
-
-
-

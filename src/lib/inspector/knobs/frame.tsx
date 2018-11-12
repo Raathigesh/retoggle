@@ -41,7 +41,7 @@ const Value = styled.div`
 interface Props {
   icon: React.ReactElement<any>;
   label: string;
-  direction: "column" | "row";
+  direction?: "column" | "row";
   children: ReactElement<any>;
   style?: any;
 }

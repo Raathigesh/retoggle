@@ -2,9 +2,10 @@
 name: useRangesKnob
 menu: Knobs
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useRangesKnob } from "../src/lib";
+import { Inspector, useRangesKnob } from "../../src/lib";
 
 ### useRangesKnob(label, {[name]: {initialValue, mix, max}})
 
@@ -16,11 +17,12 @@ Provides multiple range contorls. A wrapper around `useRangeKnob` for ease of us
   - `min` - Minimum value of the slider. Defaults to `0`.
   - `max` - Maximum value of the slider. Defaults to `0`.
 
-
 #### Usage
+
 ```javascript
 import { useRangesKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
    const rangeValues = useRangesKnob("Ranges", {
@@ -42,5 +44,7 @@ import { useRangesKnob } from "retoggle";
             {JSON.stringify(rangeValues)}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>

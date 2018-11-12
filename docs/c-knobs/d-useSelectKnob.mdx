@@ -2,9 +2,10 @@
 name: useSelectKnob
 menu: Knobs
 ---
-import {useState} from 'react';
+
+import { useState } from "react";
 import { Playground } from "docz";
-import { Inspector, useSelectKnob } from "../src/lib";
+import { Inspector, useSelectKnob } from "../../src/lib";
 
 ### useSelectKnob(label, options, initialValue)
 
@@ -14,11 +15,12 @@ Displays a select box with options.
 - `options` - A array of strings or numbers which should be displayed as options
 - `initialValue` - A value from the options array to use as the initial value
 
-
 #### Usage
+
 ```javascript
 import { useSelectKnob } from "retoggle";
 ```
+
 <Playground>
 {() => {
      const [selectedOption, setSelection] = useSelectKnob(
@@ -33,5 +35,7 @@ import { useSelectKnob } from "retoggle";
             {selectedOption}
         </React.Fragment>
     )
-  }}
+
+}}
+
 </Playground>
