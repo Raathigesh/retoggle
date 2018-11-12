@@ -18,6 +18,23 @@ Retoggle is a collection of React hooks which provides UI toggles to manipulate 
 
 > 🚨 You need React v16.7.0 to use Retoggle since it relies on Hooks. Also Hooks are a new feature proposal that lets you use state and other React features without writing a class. They’re currently in React v16.7.0-alpha and [being discussed in an open RFC.](https://github.com/reactjs/rfcs/pull/68)
 
+### Available knobs
+
+- 📝 `useLog()` - Keeps track of a variable value
+- 🅰 `useTextKnob()` - Shows a text box
+- 1️⃣ `useNumberKnob()` - Shows a number box
+- ✅️ `useBooleanKnob()` - Shows a check box
+- 🎚 `useRangeKnob()` - Shows a slider
+- 🎛 `useRangesKnob()` - Shows multiple sliders
+- 🎏 `useSelectKnob()` - Shows a select box
+- ⚒ `useObjectKnob()` - Shows an object editor
+- 🎨 `useColorKnob()` - Shows a color picker
+- ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
+
+#### 📚 [API Docs with live preview available here](https://retoggle.debuggable.io)
+
+#### 🔮 [Codesandbox Demo](https://codesandbox.io/s/kw21kn3063)
+
 ### An example
 
 The value of `state` will be displayed in the inspector component.
@@ -39,23 +56,6 @@ export default function Demo() {
   );
 }
 ```
-
-### Avilable knobs
-
-- 📝 `useLog()` - Keeps track of a variable value
-- 🅰 `useTextKnob()` - Shows a text box
-- 1️⃣ `useNumberKnob()` - Shows a number box
-- ✅️ `useBooleanKnob()` - Shows a check box
-- 🎚 `useRangeKnob()` - Shows a slider
-- 🎛 `useRangesKnob()` - Shows multiple sliders
-- 🎏 `useSelectKnob()` - Shows a select box
-- ⚒ `useObjectKnob()` - Shows an object editor
-- 🎨 `useColorKnob()` - Shows a color picker
-- ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
-
-#### 📚 [API Docs with live preview available here](https://retoggle.debuggable.io)
-
-#### 🔮 [Codesandbox Demo](https://codesandbox.io/s/kw21kn3063)
 
 ### Contribute
 
