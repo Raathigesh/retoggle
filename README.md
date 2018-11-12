@@ -48,7 +48,7 @@ export default function Demo() {
 - 🎨 `useColorKnob()` - Shows a color picker
 - ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
 
-#### 📚 [API Docs with live preview available here.](https://storyhooks.debuggable.io)
+#### 📚 [API Docs with live preview available here.](https://retoggle.debuggable.io)
 
 ### Contribute
 
