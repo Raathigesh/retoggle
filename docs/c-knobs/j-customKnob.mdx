@@ -11,7 +11,7 @@ import useChartKnob from "../../example/custom-chart-knob";
 
 ### Writting a custom Knob
 
-Retoggle allows you to add your own knobs to the Inspector with a simple API.
+Retoggle allows you to add your own knobs to the Inspector.
 
 A custom knob comprises of two parts
 
@@ -24,26 +24,43 @@ A custom knob comprises of two parts
 import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
 ```
 
-- `addKnobRenderer(type, Component)` - Registers a knob renderer component with the store.
+- `addKnobRenderer(type, Component)` - Registers a knob renderer component to the inspector panel.
 
   - `type`: Knob type. This is a string. Should be unqiue across knobs.
   - `Component`: The component constructor.
+
+```javascript
+import Component from './myComponent';
+addKnobRenderer("chart", Component);
+```
 
 - `setKnob(props)` - You would call this method to update your knob. The following are required props.
 
   - `name`: The name of your knob.
   - `type`: Type of the knob.
 
-- `removeKnob(name)` - You would call this method remove your knob from the inspector.
+```javascript
+setKnob({
+  name: "Custom knob sample",
+  type: "chart",
+  data: {value: 5}
+});
+```
+
+- `removeKnob(name)` - You would call this method remove your knob from the inspector. Usually when your hook unmounts.
   - `name`: The name of your knob.
 
-### A walkthough of the custom knob example
+```
+removeKnob("Custom knob sample")
+```
+
+### A sample implementation
 
 This example knob implementation can be found in [src/example/custom-chart-knob](https://github.com/Raathigesh/storyhooks/blob/master/src/example/custom-chart-knob/index.ts).
 
 #### The Component of the Knob
 
-This component receives all the props passed to `setKnob()`
+This component will receive all the props passed to `setKnob()`. Nothing special here. An ordinary react component.
 
 ```javascript
 import React from "react";
@@ -89,6 +106,7 @@ import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
 import Component from "./component";
 
 const KnobType = "chart";
+// Registering the knob renderer
 addKnobRenderer(KnobType, Component);
 
 export default function useChartKnob(name: string, value: any) {
@@ -99,6 +117,7 @@ export default function useChartKnob(name: string, value: any) {
       const randomNumber = Math.floor(Math.random() * 6) + 1;
       setData([...data, randomNumber]);
 
+      // Passing the props to the renderer component
       setKnob({
         name,
         type: KnobType,
@@ -109,6 +128,7 @@ export default function useChartKnob(name: string, value: any) {
   );
 
   useEffect(() => {
+    // cleaning up before unmounting
     return () => removeKnob(name);
   }, []);
 }
@@ -116,7 +136,7 @@ export default function useChartKnob(name: string, value: any) {
 
 ## Helper KnobFrame Component
 
-Retoggle provides a helper `KnobFrame` component you can use with your custom knobs. The frame providers a label and a placeholder for icon.
+Retoggle provides a helper `KnobFrame` component you can use with your custom knobs. The frame provides a label and a placeholder for icon.
 
 ```javascript
 import { KnobFrame } from "retoggle";

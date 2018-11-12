@@ -10,7 +10,7 @@ import { Inspector, useObjectKnob } from "../../src/lib";
 
 ### useObjectKnob(label, object)
 
-A color picker which let you pic a color
+Shows an object editor on the inspector. Returns the current value and also a method to set the value;
 
 - `label` - A label for the color picker
 - `value` - A color (string or hex value) as initial value
@@ -23,7 +23,7 @@ import { useObjectKnob } from "retoggle";
 
 <Playground>
 {() => {
-    const [obj, setColor] = useObjectKnob("Color", {});
+    const [obj, setObj] = useObjectKnob("Color", {});
 
     return (
         <React.Fragment>

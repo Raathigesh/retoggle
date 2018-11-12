@@ -10,10 +10,10 @@ import { Inspector, useRangesKnob } from "../../src/lib";
 
 ### useRangesKnob(label, {[name]: {initialValue, mix, max}})
 
-Provides multiple range contorls. A wrapper around `useRangeKnob` for ease of use.
+Shows multiple range contorls on the inspector. A wrapper around `useRangeKnob` for ease of use.
 
-- `label` - A label for the range group
-- `ranges` - An object with keys as range names and values as follows.
+- `label` - A label for the slider group
+- `ranges` - An object with keys as slider names and options as listed below.
   - `initialValue` - The initial value of the slider. Defaults to `0`.
   - `min` - Minimum value of the slider. Defaults to `0`.
   - `max` - Maximum value of the slider. Defaults to `0`.
