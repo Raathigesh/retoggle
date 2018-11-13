@@ -70,7 +70,7 @@ Running and building the library
 
 Docs
 
-- `docz:dev` will start the docz developement server
+- `docz:dev` will start the docz development server
 - `docz:build` will build the docs
 
 ### License
