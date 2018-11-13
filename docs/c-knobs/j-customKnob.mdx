@@ -1,7 +1,7 @@
 ---
 name: Your Custom Knob
 menu: Knobs
-route: /writting-your-own-custom-knob
+route: /writing-your-own-custom-knob
 ---
 
 import { useState } from "react";
@@ -9,7 +9,7 @@ import { Playground, PropsTable } from "docz";
 import { KnobFrame } from "../../src/lib";
 import useChartKnob from "../../example/custom-chart-knob";
 
-## Writting a custom Knob
+## Writing a custom Knob
 
 Retoggle allows you to add your own knobs to the Inspector.
 
@@ -26,7 +26,7 @@ import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
 
 - `addKnobRenderer(type, Component)` - Registers a knob renderer component to the inspector panel.
 
-  - `type`: Knob type. This is a string. Should be unqiue across knobs.
+  - `type`: Knob type. This is a string. Should be unique across knobs.
   - `Component`: The component constructor.
 
 ```javascript
