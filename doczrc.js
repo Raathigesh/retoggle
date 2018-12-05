@@ -2,6 +2,7 @@ export default {
   title: "Retoggle",
   description: "Experiment with your components using hooks",
   typescript: true,
+  codeSandbox: false,
   themeConfig: {
     repository: "https://github.com/smooth-code/smooth-ui",
     colors: {
