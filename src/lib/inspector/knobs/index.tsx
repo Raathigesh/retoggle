@@ -33,7 +33,7 @@ export default function Knobs() {
     <Container>
       {Object.entries(knobs).map(([name, knob]: any) => {
         const Component = getKnobRenderer(knob.type);
-        return <Component {...knob} />;
+        return <Component key={knob.name} {...knob} />;
       })}
     </Container>
   );
