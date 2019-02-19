@@ -16,8 +16,6 @@ Retoggle is a collection of React hooks which provides UI toggles to manipulate 
 - 🎨 Themeable components
 - 🎁 Extensible. Write your custom toggles.
 
-> 🚨 You need React v16.7.0 to use Retoggle since it relies on Hooks. Also Hooks are a new feature proposal that lets you use state and other React features without writing a class. They’re currently in React v16.7.0-alpha and [being discussed in an open RFC.](https://github.com/reactjs/rfcs/pull/68)
-
 ### Available knobs
 
 - 📝 `useLog()` - Keeps track of a variable value
