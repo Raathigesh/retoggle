@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import {ThemeKeys} from "react-json-view";
 
 export interface Theme {
   primaryColor: string;
@@ -19,7 +20,7 @@ export interface Theme {
     };
   };
   log: {
-    objectViewerTheme: string;
+    objectViewerTheme: ThemeKeys;
     label: {
       color: string;
       dividerColor: string;

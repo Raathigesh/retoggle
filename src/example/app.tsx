@@ -49,15 +49,33 @@ export default function Icon() {
     "blissful"
   );
   const [colorValue] = useColorKnob("Color", "wheat");
-  const [obj, setObj] = useObjectKnob("Object", {});
+  useObjectKnob("Object", {});
   const timeMachineValue = useTimeMachine("Color timemachine", colorValue);
   useChartKnob("Chart", timeMachineValue);
 
   return (
-    <Tile style={{ borderWidth, borderStyle: "solid", borderColor: "white" }}>
+    <Tile
+      style={{
+        borderWidth: borderWidth as number,
+        borderStyle: "solid",
+        borderColor: "white"
+      }}
+    >
       <Inspector />
       {visibility && (
-        <Ghost size={rangeKnobValue} mood={mood} color={timeMachineValue} />
+        <Ghost
+          size={rangeKnobValue as number}
+          mood={
+            mood as
+              | "sad"
+              | "shocked"
+              | "happy"
+              | "blissful"
+              | "lovestruck"
+              | "excited"
+          }
+          color={timeMachineValue}
+        />
       )}
     </Tile>
   );

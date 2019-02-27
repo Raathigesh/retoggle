@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { setLog, removeLog } from "../inspector/state-handler";
 
 export default function useLog(name: string, value: string | boolean | object) {
