@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Info } from "react-feather";
-import ReactJson from "react-json-view";
+import ReactJson, { ThemeKeys, ThemeObject} from "react-json-view";
 import ThemeContext from "../theme";
 
 const Container = styled.div<{ dividerColor: string }>`
@@ -35,7 +35,7 @@ const Value = styled.div`
   overflow: auto;
 `;
 
-function getRenderer(value: any, theme: string) {
+function getRenderer(value: any, theme:  ThemeKeys | ThemeObject) {
   if (typeof value === "object") {
     return <ReactJson src={value} theme={theme} />;
   } else if (typeof value === "boolean") {

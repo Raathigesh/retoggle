@@ -15,7 +15,7 @@ const Container = styled.div`
 
 interface Props {
   name: string;
-  value: number;
+  value: object;
   onChange: (value: any) => void;
 }
 

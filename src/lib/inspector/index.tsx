@@ -1,4 +1,4 @@
-import React, { SFC } from "react";
+import React from "react";
 import { createPortal } from "react-dom";
 import { createGlobalStyle } from "styled-components";
 import { mount } from "./mount";
@@ -30,7 +30,7 @@ export interface Props {
   theme?: Theme;
 }
 
-export const Inspector: SFC<Props> = ({
+export const Inspector: React.FC<Props> = ({
   usePortal = true,
   width = "300px",
   height,
@@ -38,7 +38,6 @@ export const Inspector: SFC<Props> = ({
 }) => {
   const content = (
     <ThemeContext.Provider value={theme}>
-      <GlobalReset />
       <InspectorBody width={width} height={height} usePortal={usePortal} />
     </ThemeContext.Provider>
   );

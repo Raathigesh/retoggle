@@ -6,7 +6,6 @@
     "target": "es5",
     "lib": ["es6", "dom", "es2017.object"],
     "sourceMap": true,
-    "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
@@ -19,7 +18,9 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "/lib"
+    "emitDeclarationOnly": true
   },
-  "exclude": []
+  "exclude": [
+    "src/example"
+  ]
 }

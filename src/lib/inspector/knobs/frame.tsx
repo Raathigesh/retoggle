@@ -62,7 +62,7 @@ export interface Props {
   style?: any;
 }
 
-export const KnobFrame: SFC<Props> = ({
+export const KnobFrame: React.FC<Props> = ({
   icon,
   label,
   children,
