@@ -9,7 +9,7 @@ module.exports = env => ({
     path: path.resolve(__dirname, "../lib"),
     filename: "index.js",
     sourceMapFilename: "[file].map",
-    library: "storyhooks",
+    library: "retoggle",
     libraryTarget: "umd"
   },
   resolve: {
