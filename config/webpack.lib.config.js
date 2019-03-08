@@ -10,7 +10,8 @@ module.exports = env => ({
     filename: "index.js",
     sourceMapFilename: "[file].map",
     library: "retoggle",
-    libraryTarget: "umd"
+    libraryTarget: "umd",
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"]
