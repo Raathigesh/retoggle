@@ -2,8 +2,23 @@
   "name": "retoggle",
   "version": "0.3.0",
   "main": "lib/index.js",
+  "author": "Raathi Kugarajan (https://github.com/Raathigesh)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Raathigesh/retoggle.git"
+  },
+  "description": "UI controls as React Hooks to control your component state from outside",
+  "homepage": "https://retoggle.debuggable.io/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Raathigesh/retoggle/issues"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "storybook"
+  ],
   "typings": "lib/index.d.ts",
-  "description": "",
   "dependencies": {},
   "scripts": {
     "start": "webpack-dev-server --env.development --config ./config/webpack.dev.config.js",
@@ -14,7 +29,6 @@
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
-  "eslintConfig": {},
   "browserslist": [
     ">0.2%",
     "not dead",
