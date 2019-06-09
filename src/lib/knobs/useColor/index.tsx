@@ -27,5 +27,5 @@ export default function useColorKnob(name: string, initialValue: string) {
   useEffect(() => {
     return () => removeKnob(name);
   }, []);
-  return [value, setValue];
+  return [value, setValue] as const;
 }

@@ -33,5 +33,5 @@ export default function useSelectKnob(
     return () => removeKnob(name);
   }, []);
 
-  return [value, setValue];
+  return [value, setValue] as const;
 }
