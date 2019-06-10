@@ -27,5 +27,5 @@ export default function useBooleanKnob(name: string, initialValue = false) {
   useEffect(() => {
     return () => removeKnob(name);
   }, []);
-  return [value, setValue];
+  return [value, setValue] as const;
 }

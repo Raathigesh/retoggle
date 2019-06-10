@@ -28,5 +28,5 @@ export default function useTextKnob(name: string, initialValue = 0) {
     return () => removeKnob(name);
   }, []);
 
-  return [value, setValue];
+  return [value, setValue] as const;
 }

@@ -31,5 +31,5 @@ export default function useRangeKnob(
     return () => removeKnob(name);
   }, []);
 
-  return [value, setValue];
+  return [value, setValue] as const;
 }
