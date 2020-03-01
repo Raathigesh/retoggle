@@ -29,7 +29,7 @@ Retoggle is a collection of React hooks which provides UI toggles to manipulate 
 - 🎨 `useColorKnob()` - Shows a color picker
 - ⏰ `useTimemachine()` - Shows a slider and tracks the state of a given variable and allows to travel back in time
 
-#### 📚 [API Docs with live preview available here](https://retoggle.debuggable.io)
+#### 📚 [API Docs with live preview available here](https://retoggle.netlify.com)
 
 #### 🔮 [Codesandbox Demo](https://codesandbox.io/s/kw21kn3063)
 
