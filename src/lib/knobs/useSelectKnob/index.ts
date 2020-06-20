@@ -1,12 +1,6 @@
-import { useState, useEffect } from "react";
-import {
-  setKnob,
-  removeKnob,
-  addKnobRenderer
-} from "../../inspector/state-handler";
+import { useState, useEffect, useContext } from "react";
+import useInspector from "../../inspector/useInspector";
 import Component from "./select";
-
-addKnobRenderer("select", Component);
 
 export default function useSelectKnob(
   name: string,
@@ -14,9 +8,11 @@ export default function useSelectKnob(
   initialValue: string
 ) {
   const [value, setValue] = useState(initialValue);
+  const inspector = useInspector();
+  inspector.addKnobRenderer("select", Component);
   useEffect(
     () => {
-      setKnob({
+      inspector.setKnob({
         name,
         type: "select",
         options,
@@ -30,7 +26,7 @@ export default function useSelectKnob(
   );
 
   useEffect(() => {
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
 
   return [value, setValue] as const;

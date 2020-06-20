@@ -8,3 +8,4 @@ jest.config.js
 react-hooks.d.ts
 .babelrc
 .travis.yml
+.tgz

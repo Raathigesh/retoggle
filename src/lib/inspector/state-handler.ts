@@ -1,4 +1,4 @@
-class StateHandler {
+export default class StateHandler {
   public logs: any;
   public knobs: any;
   public knobRenderers: any = {};
@@ -74,17 +74,29 @@ class StateHandler {
 }
 
 // singleton
-const stateHandler = new StateHandler();
+export const defaultStateHandler = new StateHandler();
 
-export const addLogSubscriber = stateHandler.addLogSubscriber;
-export const addKnobSubscriber = stateHandler.addKnobSubscriber;
-export const haveLogs = stateHandler.haveLogs;
-export const haveKnobs = stateHandler.haveKnobs;
-export const getLogs = stateHandler.getLogs;
-export const getKnobs = stateHandler.getKnobs;
-export const setLog = stateHandler.setLog;
-export const removeLog = stateHandler.removeLog;
-export const setKnob = stateHandler.setKnob;
-export const removeKnob = stateHandler.removeKnob;
-export const addKnobRenderer = stateHandler.addKnobRenderer;
-export const getKnobRenderer = stateHandler.getKnobRenderer;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const addLogSubscriber = defaultStateHandler.addLogSubscriber;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const addKnobSubscriber = defaultStateHandler.addKnobSubscriber;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const haveLogs = defaultStateHandler.haveLogs;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const haveKnobs = defaultStateHandler.haveKnobs;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const getLogs = defaultStateHandler.getLogs;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const getKnobs = defaultStateHandler.getKnobs;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const setLog = defaultStateHandler.setLog;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const removeLog = defaultStateHandler.removeLog;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const setKnob = defaultStateHandler.setKnob;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const removeKnob = defaultStateHandler.removeKnob;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const addKnobRenderer = defaultStateHandler.addKnobRenderer;
+/** @deprecated use inspector context. using these methods will only affect inspectors not used in an inspector context */
+export const getKnobRenderer = defaultStateHandler.getKnobRenderer;

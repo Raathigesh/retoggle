@@ -1,10 +1,11 @@
-import { useEffect } from "react";
-import { setLog, removeLog } from "../inspector/state-handler";
+import { useEffect, useContext } from "react";
+import useInspector from "../inspector/useInspector";
 
 export default function useLog(name: string, value: string | boolean | object) {
+  const inspector = useInspector();
   useEffect(
     () => {
-      setLog({
+      inspector.setLog({
         name,
         props: {
           name,
@@ -17,7 +18,7 @@ export default function useLog(name: string, value: string | boolean | object) {
 
   useEffect(() => {
     return () => {
-      removeLog(name);
+      inspector.removeLog(name);
     };
   }, []);
 }

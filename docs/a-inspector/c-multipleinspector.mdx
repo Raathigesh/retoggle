@@ -1,0 +1,94 @@
+---
+name: Multiple Inspectors
+menu: Inspector
+route: /multiple-inspectors
+---
+
+import { Playground } from "docz";
+import { Inspector, InspectorProvider, useNumberKnob } from "../../src/lib";
+
+### Multiple Inspectors
+
+If you need multiple isolated inspectors, you can do that by creating an `InspectorProvider` somewhere in the tree where you want isolation to occur.
+
+- First import the `Inspector` and `InspectorProvider`
+
+```javascript
+import { Inspector, InspectorProvider } from "retoggle";
+```
+
+- Next setup your component like this. Or as you'll see in the final example it can be done as a function as a child of the provider.
+```javascript
+export const Example = ({name}) => {
+  const [value] = useNumberKnob(name);
+  return (
+    <React.Fragment>
+      <h4>{name} {value}</h4>
+      <Inspector usePortal={false} />
+    </React.Fragment>
+  );
+}
+```
+
+- Finally put them in individual `InspectorProvider`'s
+```javascript
+<React.Fragment>
+  <InspectorProvider>
+    <Example name="Example A" />
+  </InspectorProvider>
+  <InspectorProvider>
+    <Example name="Example B" />
+  </InspectorProvider>
+</React.Fragment>
+```
+
+<Playground>
+  {() => {
+    const Example = ({name}) => {
+      const [value] = useNumberKnob(name);
+      return (
+        <React.Fragment>
+          <h4>{name} {value}</h4>
+          <Inspector usePortal={false} />
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <React.Fragment>
+        <InspectorProvider>
+          <Example name="Example A" />
+        </InspectorProvider>
+        <InspectorProvider>
+          <Example name="Example B" />
+        </InspectorProvider>
+      </React.Fragment>
+    );
+  }}
+</Playground>
+
+#### Function as a child
+
+If for whatever reason you really don't want define a function component externally, it can technically be done in a function as a child.
+
+```javascript
+<InspectorProvider>
+  {() => {
+    const ExampleC = () => {
+      const [value] = useNumberKnob('Example C');
+      return (
+        <React.Fragment>
+          <h4>Example C {value}</h4>
+          <Inspector usePortal={false} />
+        </React.Fragment>
+      );
+    }
+    return <ExampleC />
+  }}
+</InspectorProvider>
+```
+
+> Note: There is a caveat to setting up your knobs like `ExampleC` (i.e. using a function as a child) which is that you must still 
+> define a function component that will invoke the hooks to add the knobs. Otherwise it does not work as expected as that would be
+> breaking one of the rules of hooks in that hooks cannot be invoked from a callback. And aside from from that, your function
+> component would basically get re-created everytime that function as a child is invoked. YMMV with this method.

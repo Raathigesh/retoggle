@@ -1,14 +1,8 @@
 // https://twitter.com/dan_abramov/status/1058870951373344769
 
-import { useEffect, useReducer } from "react";
-import {
-  setKnob,
-  removeKnob,
-  addKnobRenderer
-} from "../../inspector/state-handler";
+import { useEffect, useReducer, useContext } from "react";
+import useInspector from "../../inspector/useInspector";
 import Component from "./timeMachine";
-
-addKnobRenderer("timemachine", Component);
 
 export default function useTimeMachine(name: string, currentState: any) {
   const [machineState, dispatch] = useReducer(
@@ -33,6 +27,8 @@ export default function useTimeMachine(name: string, currentState: any) {
       version: -1
     }
   );
+  const inspector = useInspector();
+  inspector.addKnobRenderer("timemachine", Component);
 
   const { history, version } = machineState;
   if (currentState !== history[history.length - 1]) {
@@ -41,7 +37,7 @@ export default function useTimeMachine(name: string, currentState: any) {
 
   useEffect(
     () => {
-      setKnob({
+      inspector.setKnob({
         name,
         type: "timemachine",
         min: 0,
@@ -59,7 +55,7 @@ export default function useTimeMachine(name: string, currentState: any) {
   );
 
   useEffect(() => {
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
 
   return history[version];

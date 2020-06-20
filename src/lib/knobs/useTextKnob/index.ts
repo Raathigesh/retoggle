@@ -1,18 +1,14 @@
-import { useState, useEffect } from "react";
-import {
-  setKnob,
-  removeKnob,
-  addKnobRenderer
-} from "../../inspector/state-handler";
+import { useState, useEffect, useContext } from "react";
+import useInspector from "../../inspector/useInspector";
 import Component from "./text";
-
-addKnobRenderer("text", Component);
 
 export default function useTextKnob(name: string, initialValue = "") {
   const [value, setValue] = useState(initialValue);
+  const inspector = useInspector();
+  inspector.addKnobRenderer("text", Component);
   useEffect(
     () => {
-      setKnob({
+      inspector.setKnob({
         name,
         type: "text",
         value,
@@ -25,7 +21,7 @@ export default function useTextKnob(name: string, initialValue = "") {
   );
 
   useEffect(() => {
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
 
   return [value, setValue] as const;

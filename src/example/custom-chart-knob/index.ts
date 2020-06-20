@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { setKnob, removeKnob, addKnobRenderer } from "../../lib";
+import { useInspector } from "../../lib";
 import Component from "./component";
-
-addKnobRenderer("chart", Component);
 
 export default function useChartKnob(name: string, value: any) {
   const [data, setData] = useState([] as number[]);
+  const inspector = useInspector();
+  inspector.addKnobRenderer("chart", Component);
 
   useEffect(
     () => {
       const randomNumber = Math.floor(Math.random() * 6) + 1;
       setData([...data, randomNumber]);
 
-      setKnob({
+      inspector.setKnob({
         name,
         type: "chart",
         data
@@ -22,6 +22,6 @@ export default function useChartKnob(name: string, value: any) {
   );
 
   useEffect(() => {
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
 }
