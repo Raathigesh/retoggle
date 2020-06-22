@@ -1,18 +1,14 @@
 import { useState, useEffect } from "react";
-import {
-  setKnob,
-  removeKnob,
-  addKnobRenderer
-} from "../../inspector/state-handler";
+import useInspector from "../../inspector/useInspector";
 import Component from "./color";
-
-addKnobRenderer("color", Component);
 
 export default function useColorKnob(name: string, initialValue: string) {
   const [value, setValue] = useState(initialValue);
+  const inspector = useInspector();
+  inspector.addKnobRenderer("color", Component);
   useEffect(
     () => {
-      setKnob({
+      inspector.setKnob({
         name,
         type: "color",
         value,
@@ -25,7 +21,7 @@ export default function useColorKnob(name: string, initialValue: string) {
   );
 
   useEffect(() => {
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
   return [value, setValue] as const;
 }

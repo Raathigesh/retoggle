@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
-import { haveLogs, addLogSubscriber, getLogs } from "../state-handler";
+import { InspectorContext } from "../provider";
 import Log from "./log";
 
 const Container = styled.div``;
 
 export default function Logs() {
   const [logs, setLogs] = useState({});
+  const inspector = useContext(InspectorContext);
   useEffect(() => {
-    if (haveLogs()) {
-      setLogs({ ...getLogs() });
+    if (inspector.haveLogs()) {
+      setLogs({ ...inspector.getLogs() });
     }
 
-    addLogSubscriber((log: any) => {
+    inspector.addLogSubscriber((log: any) => {
       setLogs((previousLogs: any) => ({
         ...previousLogs,
         ...{ [log.name]: log }

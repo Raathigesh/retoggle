@@ -21,37 +21,39 @@ A custom knob comprises of two parts
 ## The API
 
 ```javascript
-import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
+import { useInspector } from "retoggle";
 ```
 
-- `addKnobRenderer(type, Component)` - Registers a knob renderer component to the inspector panel.
+- `const inspector = useInspector()` - Gets the current inspector state from the context.
+
+- `inspector.addKnobRenderer(type, Component)` - Registers a knob renderer component to the inspector panel.
 
   - `type`: Knob type. This is a string. Should be unique across knobs.
   - `Component`: The component constructor.
 
 ```javascript
 import Component from './myComponent';
-addKnobRenderer("chart", Component);
+inspector.addKnobRenderer("chart", Component);
 ```
 
-- `setKnob(props)` - You would call this method to update your knob. The following are required props.
+- `inspector.setKnob(props)` - You would call this method to update your knob. The following are required props.
 
   - `name`: The name of your knob.
   - `type`: Type of the knob.
 
 ```javascript
-setKnob({
+inspector.setKnob({
   name: "Custom knob sample",
   type: "chart",
   data: {value: 5}
 });
 ```
 
-- `removeKnob(name)` - You would call this method remove your knob from the inspector. Usually when your hook unmounts.
+- `inspector.removeKnob(name)` - You would call this method remove your knob from the inspector. Usually when your hook unmounts.
   - `name`: The name of your knob.
 
 ```
-removeKnob("Custom knob sample")
+inspector.removeKnob("Custom knob sample")
 ```
 
 ## A sample implementation
@@ -102,15 +104,17 @@ export default function Chart({ data }) {
 
 ```javascript
 import { useState, useEffect } from "react";
-import { setKnob, removeKnob, addKnobRenderer } from "retoggle";
+import { useInspector } from "retoggle";
 import Component from "./component";
 
 const KnobType = "chart";
-// Registering the knob renderer
-addKnobRenderer(KnobType, Component);
 
 export default function useChartKnob(name: string, value: any) {
   const [data, setData] = useState([]);
+  const inspector = useInspector();
+
+  // Registering the knob renderer
+  inspector.addKnobRenderer(KnobType, Component);
 
   useEffect(
     () => {
@@ -118,7 +122,7 @@ export default function useChartKnob(name: string, value: any) {
       setData([...data, randomNumber]);
 
       // Passing the props to the renderer component
-      setKnob({
+      inspector.setKnob({
         name,
         type: KnobType,
         data
@@ -129,7 +133,7 @@ export default function useChartKnob(name: string, value: any) {
 
   useEffect(() => {
     // cleaning up before unmounting
-    return () => removeKnob(name);
+    return () => inspector.removeKnob(name);
   }, []);
 }
 ```

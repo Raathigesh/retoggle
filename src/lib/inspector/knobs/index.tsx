@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
-import {
-  haveKnobs,
-  addKnobSubscriber,
-  getKnobs,
-  getKnobRenderer
-} from "../state-handler";
+import { InspectorContext } from "../provider";
 
 const Container = styled.div``;
 
 export default function Knobs() {
   const [knobs, setKnobs] = useState({});
+  const inspector = useContext(InspectorContext);
 
   useEffect(() => {
-    if (haveKnobs()) {
-      setKnobs({ ...getKnobs() });
+    if (inspector.haveKnobs()) {
+      setKnobs({ ...inspector.getKnobs() });
     }
 
-    addKnobSubscriber((knob: any) => {
+    inspector.addKnobSubscriber((knob: any) => {
       setKnobs((previousKnobs: any) => ({
         ...previousKnobs,
         ...{ [knob.name]: knob }
@@ -32,7 +28,7 @@ export default function Knobs() {
   return (
     <Container>
       {Object.entries(knobs).map(([name, knob]: any) => {
-        const Component = getKnobRenderer(knob.type);
+        const Component = inspector.getKnobRenderer(knob.type);
         return <Component key={knob.name} {...knob} />;
       })}
     </Container>

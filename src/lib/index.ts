@@ -1,4 +1,6 @@
 export { Inspector } from "./inspector";
+export { default as useInspector } from "./inspector/useInspector";
+export { default as InspectorProvider } from "./inspector/provider";
 export { default as useLog } from "./use-log";
 export { default as useBooleanKnob } from "./knobs/useBooleanKnob";
 export { default as useTextKnob } from "./knobs/useTextKnob";
