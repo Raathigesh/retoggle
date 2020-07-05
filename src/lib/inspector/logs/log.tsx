@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { Info } from "react-feather";
-import ReactJson, { ThemeKeys, ThemeObject} from "react-json-view";
+import ReactJson, { ThemeKeys, ThemeObject } from "react-json-view";
 import ThemeContext from "../theme";
 
 const Container = styled.div<{ dividerColor: string }>`
@@ -12,14 +12,14 @@ const Container = styled.div<{ dividerColor: string }>`
   flex-direction: column;
   padding-top: 3px;
   padding-bottom: 3px;
-  border-bottom: 1px solid ${props => props.dividerColor};
+  border-bottom: 1px solid ${(props) => props.dividerColor};
 `;
 
 const Name = styled.div<{ color: string }>`
   display: flex;
   align-items: center;
   padding-right: 10px;
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   width: 150px;
   min-width: 150px;
   margin-bottom: 5px;
@@ -35,7 +35,7 @@ const Value = styled.div`
   overflow: auto;
 `;
 
-function getRenderer(value: any, theme:  ThemeKeys | ThemeObject) {
+function getRenderer(value: any, theme: ThemeKeys | ThemeObject) {
   if (typeof value === "object") {
     return <ReactJson src={value} theme={theme} />;
   } else if (typeof value === "boolean") {
@@ -51,9 +51,10 @@ interface Props {
 
 export default function Log({ name, value }: Props) {
   const {
-    log: { label, objectViewerTheme }
+    log: { label, objectViewerTheme },
   } = useContext(ThemeContext);
   const renderer = getRenderer(value, objectViewerTheme);
+
   return (
     <Container dividerColor={label.dividerColor}>
       <Name color={label.color}>

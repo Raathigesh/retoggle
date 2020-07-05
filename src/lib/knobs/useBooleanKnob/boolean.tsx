@@ -8,7 +8,7 @@ import ThemeContext from "../../inspector/theme";
 
 const StyledCheckBox = styled(Checkbox)<{ background: string }>`
   input:checked + .sui-checkbox-content {
-    background-color: ${props => props.background};
+    background-color: ${(props) => props.background};
     border-color: transparent;
   }
 `;
